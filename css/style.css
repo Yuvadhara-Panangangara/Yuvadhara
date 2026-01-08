@@ -1786,6 +1786,7 @@ body {
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(227, 118, 8, 0.6);
     font-family: "Oswald", Sans-serif;
 }
 .football_banner_title_span2 {
@@ -1794,6 +1795,7 @@ body {
     color: #ff6606;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(251, 253, 249, 0.6);
     font-family: "Oswald", Sans-serif;
 }
 .footballer-section{
@@ -1823,8 +1825,11 @@ body {
 .image-footballer img{
 
  
-  aspect-ratio: 3/3;
+  aspect-ratio: 3/4;
   border-radius: 10px;
+  border-style: inset;
+  border-width: 2px;
+  border-color: #0ed826;
   padding: 5px;
 
 }
@@ -1858,6 +1863,7 @@ body {
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(110, 210, 10, 0.6);
     font-family: "Oswald", Sans-serif;
 }
 .cricket_banner_title_span2 {
@@ -1866,6 +1872,7 @@ body {
     color: #0ed826;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.929);
     font-family: "Oswald", Sans-serif;
 }
 /*test-Tournament page end-------------------------------------------------------------*/
@@ -2148,6 +2155,7 @@ body {
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(3, 255, 234, 0.6);
     font-family: "Oswald", Sans-serif;
 }
 .badminton_banner_title_span2 {
@@ -2156,6 +2164,7 @@ body {
     color: #0ecbd8;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.6);
     font-family: "Oswald", Sans-serif;
 }
 
@@ -2177,14 +2186,16 @@ body {
     color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 4, 238, 0.6);
     font-family: "Oswald", Sans-serif;
 }
 .volleyball_banner_title_span2 {
     width: 100%;
     font-size: 50px;
-    color: #0ecbd8;
+    color: #ca03f7;
     font-weight: bold;
     text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.6);
     font-family: "Oswald", Sans-serif;
 }
 
@@ -2551,7 +2562,7 @@ body {
 .banner-book-main {
     width: 100%;
     height: fit-content; /* Full viewport height: 100vh-edited to fit content custom shan */
-    background: linear-gradient(90deg, #84de84 0%, #21c00f 100%); /* Orange gradient */
+    background: linear-gradient(90deg, #6cbd15 0%, #5ea413 100%); /* Orange gradient */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2589,6 +2600,7 @@ body {
     font-size: 4em; /* Large heading */
     margin: 0 0 20px 0;
     line-height: 1.1;
+    
     text-transform: uppercase;
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
