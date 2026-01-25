@@ -2932,3 +2932,11 @@ ul {
 }
 
 /*Read more section share button end----------------------------------------*/
+
+/*Our Major Projects----------------------------------------*/
+.img-project{
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 3/2.5;
+  border-style: none;
+}
