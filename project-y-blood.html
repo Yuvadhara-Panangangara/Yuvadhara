@@ -20,12 +20,23 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
+
+      <!-- custom added by shan from motorbike template 29-08-25 (global css and index css. copied into root folder)-->
+      <link href="css/global.css" rel="stylesheet">
+	   <link href="css/index.css" rel="stylesheet">
+
       <!-- fevicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- shan-included for drop down-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+      
+      <!--shan custom font rajdhani-->
+      <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
       <!-- font css -->
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
    </head>
@@ -63,7 +74,12 @@
                                     <a class="dropdown-item" href="#">Panangangara Athletics</a>
                               </div>
                               <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Panangangarotsavam 2026</a>
-                              
+                              <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Project "Y-Blood"</a>
+							  <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Vision 2031</a>
+							  <div class="dropdown-divider"></div> <a class="dropdown-item" href="project-floodlight.html">Project "Floodlight"</a>
+							  <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Project "Protective nets"</a>
+							  <div class="dropdown-divider"></div> <a class="dropdown-item" href="Library.html">Mini Library</a>
+							  
                            </div>
                         </li>
 
@@ -74,8 +90,8 @@
                                  <a class="dropdown-item dropdown-toggle" href="tournaments.html" id="tournamentsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tournaments</a>
                                  <div class="dropdown-menu" aria-labelledby="tournamentsDropdown">
                                        <a class="dropdown-item" href="tournaments.html#evening-2025">Evening football 2025</a>
-                                       <a class="dropdown-item" href="tournaments.html#evening-2024">Evening football 2024</a>
-                                       <a class="dropdown-item" href="tournaments.html#floodlight-2023">Floodlight football 2023</a>
+                                       <a class="dropdown-item" href="tournaments.html">Evening football 2024</a>
+                                       <a class="dropdown-item" href="tournaments.html">Floodlight football 2023</a>
                                  </div>
                                  <div class="dropdown-divider"></div> <a class="dropdown-item dropdown-toggle" href="#" id="leaguesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Leagues</a>
                                  <div class="dropdown-menu" aria-labelledby="leaguesDropdown">
@@ -93,13 +109,13 @@
                          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="our-team.html" id="navbarActivitiesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                  Our team</a>
                               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarActivitiesDropdown">
-                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Football team</a>
-                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Cricket team</a>
-                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Badminton team</a>
-                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Volleyball team</a>
-                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Chess team</a>
-                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Swimming team</a>
-                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="#">Athlets</a>
+                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="our-team.html">Football team</a>
+                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="our-team.html">Cricket team</a>
+                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="our-team.html">Badminton team</a>
+                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="our-team.html">Volleyball team</a>
+                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="our-team.html">Chess team</a>
+                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="our-team.html">Swimming team</a>
+                                 <div class="dropdown-divider"></div> <a class="dropdown-item" href="our-team.html">Athlets</a>
                               </div>
                         </li>
                         <li class="nav-item">
@@ -118,102 +134,95 @@
             </nav>
          </div>
       </div>
-      <!-- header section end -->     
-      <!-- about section start -->
-      <div class="about_section layout_padding">
+
+
+      <div class="hero_yblood">
+          <div class="container">
+              <h1 class="display-4 pt-3 mt-3">y-Blood</h1>
+              <p class="lead">A life-saving initiative by Yuvadhara Arts & Sports Club, Exclusively for Panangangara</p>
+              <a href="https://y-blood.rf.gd/" target="_blank" class="btn btn-blood btn-lg mt-3">Launch Web App</a>
+          </div>
+      </div>
+
+      <div class="services_section layout_padding">
          <div class="container">
             <div class="row">
-               <div class="col-md-6"> <!--left section-->
-                  <section class="left-about-section">
-                  
-                     <div class="eael-dual-header">
-				<h2 class="title eael-dch-title">
-               <span class="about_title_span1 eael-dch-title-text eael-dch-title-lead lead solid-color">Club </span> 
-               <span class="about_title_span2 eael-dch-title-text">History</span>
-            </h2>			
-            </div>
-                  <p class="about_text">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more or less normal distribution of letters as opposed to using Content here content here making it look like readable English. </p>
-                  <div class="about_img"><img src="images/about-img.png"></div>
-                  <div class="read_bt"><a href="#">Read More</a></div>
-                  </section> 
+               <div class="col-md-7">
+                  <h1 class="services_taital text-left"><span class="text-blood">About</span> Project Y-Blood</h1>
+                  <p class="services_text text-left">
+                     <strong>y-Blood</strong> is a digital blood donor repository for the people of Panangangara. It maintains a secure database of names, addresses, and blood groups of Yuvadhara members and local residents. 
+                     <br><br>
+                     The goal is to ensure that in times of medical emergency, a compatible donor can be found within seconds through our unified platform. Developed and Maintained by <a href="https://www.instagram.com/Shafeer__shan"><strong>Shafeer Shan</strong></a> 
+                  </p>
+                  <div class="m-t-20">
+                      <a href="https://y-blood.rf.gd/" class="btn btn-blood px-4">Visit Page</a>
+                  </div>
                </div>
-               <div class="col-md-6">  <!--right section-->
-<!--history timeline start-->
-                  <div class="container-timeline">
-
-  <div class="box">
-    <div class="container-3">
-      <span class="icon"><i class="fa fa-search"></i></span>
-      <input type="search" id="search" placeholder="Search..." />
-    </div>
-  </div>
-
-  <div class="leftbox">
-    <nav>
-      <!--<a id="dashboard"><i class="fas fa-tachometer-alt"></i></a>
-      <a id="profile"> <i class="fas fa-user"></i> </a>
-      <a id="settings"> <i class="fas fa-cog"></i> </a>
-      <a id="messages"> <i class="fas fa-comments"></i> </a>
-      <a id="notification"> <i class="fas fa-bell"></i> </a>-->
-   
-    </nav>
-  </div>
-  <div class="rightbox">
-    <div class="rb-container">
-      
-      <ul class="rb">
-                  <img class="timeline-image" src="images/yuvadhara logo.jpg">
-        <li class="rb-item" ng-repeat="itembx">
-          <div class="timestamp">
-            3rd May 2020<br> 7:00 PM
-          </div>
-          <div class="item-title">Chris Serrano posted a photo on your wall.</div>
-        </li>
-        
-        <img class="timeline-image" src="images/yuvadhara logo.jpg">
-        <li class="rb-item" ng-repeat="itembx">
-          <div class="timestamp">
-            19th May 2020<br> 3:00 PM
-          </div>
-          <div class="item-title">Mia Redwood commented on your last post.</div>
-
-        </li>
-
-        <li class="rb-item" ng-repeat="itembx">
-          <div class="timestamp">
-            17st June 2020<br> 7:00 PM
-          </div>
-          <div class="item-title">Lucas McAlister just send you a message.</div>
-
-        </li>
-
-        <li class="rb-item" ng-repeat="itembx">
-          <div class="timestamp">
-            15st July 2021<br> 4:00 PM
-          </div>
-          <div class="item-title">Club was inaugurated.</div>
-
-        </li>
-
-        <li class="rb-item" ng-repeat="itembx">
-          <div class="timestamp">
-            23st August 2021<br> 02:00 PM
-          </div>
-          <div class="item-title">Trophy won by Football team.</div>
-
-        </li>
-
-      </ul>
-
-    </div>
-  </div>
-</div>
-<!--history timeline end-->                  
+               <div class="col-md-5">
+                  <img src="images/y blood desktop.png" class="img-fluid rounded shadow">
                </div>
             </div>
          </div>
       </div>
-      <!-- about section end -->
+
+      <div class="layout_padding_y-blood bg-light">
+          <div class="container text-center">
+              <h1 class="services_taital">Key Features</h1>
+              
+              <div class="row mt-3">
+                  <div class="col-md-4">
+                      <div class="card p-4 feature-card h-100">
+                          <i class="fa fa-search feature-icon"></i>
+                          <h4>Instant Search</h4>
+                          <p class="text-muted">Find donors by blood group or location instantly.</p>
+                          <div class="m-t-20">
+                          <a href="https://y-blood.rf.gd/" class="btn btn-outline-danger px-4">Search</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card p-4 feature-card h-100">
+                          <i class="fa fa-shield feature-icon"></i>
+                          <h4>Emergency Access</h4>
+                          <p class="text-muted">Direct access for emergencies without long login delays.</p>
+                          <div class="m-t-20">
+                          <a href="https://y-blood.rf.gd/members/" class="btn btn-outline-danger px-4">Login</a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-4">
+                      <div class="card p-4 feature-card h-100">
+                          <i class="fa fa-users feature-icon"></i>
+                          <h4>Community Driven</h4>
+                          <p class="text-muted">Open for all Panangangara residents to register.</p>
+                          <div class="m-t-20">
+                          <a href="https://y-blood.rf.gd/register/" class="btn btn-outline-danger">Register</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="layout_padding">
+          <div class="container">
+              <h1 class="services_taital text-center">User Manual & Installation</h1>
+              <p class="text-center mb-5">Download the official manual or read it below to learn how to use the y-Blood Web App.</p>
+              
+              <div class="pdf-container mb-4">
+                  <iframe src="images/Documents/y-Blood Manual.pdf" width="100%" height="100%" style="border: none;">
+                      Your browser does not support PDFs. <a href="images/Documents/y-Blood Manual.pdf">Click here to download the PDF.</a>
+                  </iframe>
+              </div>
+              
+              <div class="text-center mb-3">
+                  <a href="images/Documents/y-Blood Manual.pdf" class="btn btn-danger btn-lg px-5" download>
+                     <i class="fa fa-download"></i> Download y-Blood Manual (PDF)
+                  </a>
+              </div>
+          </div>
+      </div>
+
       <!-- footer section start -->
       <div class="footer_section layout_padding">
          <div class="container">
@@ -272,21 +281,15 @@
          </div>
       </div>
       <!-- footer section end -->
-      <!-- copyright section start -->
       <div class="copyright_section">
          <div class="container">
-            <p class="copyright_text">2023 All Rights Reserved. Design by <a href="https://html.design">Free html  Templates</a></p>
+            <p class="copyright_text">2024 All Rights Reserved. Design by <a href="#">Shafeer shan</a></p>
          </div>
       </div>
-      <!-- copyright section end -->
-      <!-- Javascript files-->
+
       <script src="js/jquery.min.js"></script>
       <script src="js/popper.min.js"></script>
       <script src="js/bootstrap.bundle.min.js"></script>
-      <script src="js/jquery-3.0.0.min.js"></script>
-      <script src="js/plugin.js"></script>
-      <!-- sidebar -->
-      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
       <script src="js/custom.js"></script>
    </body>
 </html>

@@ -1976,7 +1976,8 @@ body {
 
 .tournament-left-image{
  
- 
+  max-height: 30rem;
+  align-items: right;
   border-radius: 10px;
   object-fit: cover;
  
@@ -3037,7 +3038,7 @@ ul {
         }
         
         .footer {
-           background: #bff084; color: #adb5bd; padding: 50px 0; 
+           background: #95ca53; color: #adb5bd; padding: 50px 0; 
         }
         .lead{
           color: #ffffff;
@@ -3056,3 +3057,74 @@ ul {
         }
 
  /*Project Floodlight section home page end----------------------------------------------*/
+
+ /*Project y-blood section home page start----------------------------------------------*/
+
+ :root { --blood-red: #d90429; --dark-red: #8d0801; }
+          .btn-blood { background-color: var(--blood-red); color: white; border-radius: 5px; }
+          .btn-blood:hover { background-color: var(--dark-red); color: white; }
+          .text-blood { color: var(--blood-red); }
+          .hero_yblood {
+              background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/Y-blood\ about\ page.png);
+              background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center;
+          }
+          .pdf-container { height: 600px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #eee; }
+          .feature-card { border: none; box-shadow: 0 4px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+          .feature-card:hover { transform: translateY(-5px); }
+          .feature-icon { font-size: 2.5rem; color: var(--blood-red); margin-bottom: 15px; }
+          :root {
+            --vision-navy: #093462ce;
+            --vision-blue: #053057;
+            --vision-gold: #ffc300;
+            --vision-light: #f8f9fa;
+        }
+    .display-4{
+      color: #ffffff;
+
+          font-weight: normal;
+          text-shadow: 0 0 10px #fff, /* Inner white glow */
+               0 0 20px #fff,
+               0 0 30px #dd0808, /* Outer pink glow */
+               0 0 40px #de3d07
+    }
+      .layout_padding_y-blood {
+    padding-top: 1rem;
+    padding-bottom: 0rem;
+  }
+
+/*Project y-blood section home page end----------------------------------------------*/
+
+/*Project Vision 2031 section home page start----------------------------------------------*/
+
+.hero_vision {
+            background: linear-gradient(rgba(0, 29, 61, 0.85), rgba(0, 29, 61, 0.85)), url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=1200');
+            background-size: cover; background-position: center;
+            color: white; padding: 120px 0; text-align: center;
+            border-bottom: 6px solid var(--vision-gold);
+        }
+
+        .text-gold { color: var(--vision-gold) !important; }
+        .bg-navy { background-color: var(--vision-navy); color: white; }
+
+        /* Style for your 3-photo combination image */
+        .vision-image-frame {
+            border: 10px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+        .vision-image-frame:hover { transform: scale(1.02); }
+
+        .commitment-card {
+            background: white; border: none; border-left: 5px solid var(--vision-gold);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05); padding: 30px;
+        }
+
+        .timeline-marker {
+            width: 50px; height: 50px; background: var(--vision-gold);
+            color: var(--vision-navy); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; margin-bottom: 15px;
+        }
+
+/*Project Vision 2031 section home page end----------------------------------------------*/
