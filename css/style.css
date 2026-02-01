@@ -2510,53 +2510,79 @@ body {
 
 /*Trophies and awards section start----------------------------------------*/
 .trophies-awards-section {
-            background-color: #2D3748;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-            position: relative;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+    background-color: #2D3748;
+    border-radius: 1rem;
+    padding: 3rem 1rem;
+    overflow: hidden; /* Ensures no scrollbars during sliding */
+}
 
-        .section-heading-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+/* Force the Row to have a consistent height */
+.carousel-item .row {
+    display: flex;
+    align-items: stretch; /* Forces all columns to be equal height */
+}
 
-        .section-heading-wrapper::before,
-        .section-heading-wrapper::after {
-            content: '';
-            flex: 1;
-            height: 1px;
-            background-color: #EF4444; /* red-500 equivalent */
-            margin: 0 1rem;
-        }
+.trophy-card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
 
-        .carousel-item-multiple {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+/* Image Container: Keeps trophies aligned */
+.trophy-img-container {
+    height: 180px; /* Fixed height for image area */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
 
-        /* Responsive styles to show 4 items on larger screens */
-        @media (min-width: 992px) {
-            .carousel-item-multiple .col-md-3 {
-                display: block;
-            }
-        }
- 
-        .trophy{
-          align-items: center;
-          flex: 1;
-          aspect-ratio: 3/4; /* Makes image fill the height of its parent flex item */
-          object-fit: contain;
-          scale: 0.8;
-        }
+.trophy {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* THE FIX: Fixed height for text area prevents page jumping */
+.trophy-info-box {
+    min-height: 90px; /* Adjust this if your Malayalam text is very long */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.trophy-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.trophy-date {
+    font-size: 12px;
+    color: #A0AEC0;
+}
+
+/* Animation smoothing */
+.carousel-item {
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .trophy-img-container {
+        height: 130px; /* Smaller trophies on mobile */
+    }
+    .trophy-info-box {
+        min-height: 110px; /* More space for text wrapping on narrow screens */
+    }
+    .trophy-title {
+        font-size: 12px;
+    }
+}
  /*Trophies and awards section end----------------------------------------*/
 
 /*Library section book banner and search start----------------------------------------*/
@@ -2934,18 +2960,79 @@ ul {
 
 /*Read more section share button end------------------------------------------------------*/
 
-/*Our Major Projects start----------------------------------------------------------------*/
+/*All Projects start----------------------------------------------------------------*/
 .img-project{
   max-width: 100%;
   height: auto;
   aspect-ratio: 3/2.5;
   border-style: none;
 }
-/*Our Major Projects end-------------------------------------------------------------------*/
+/*All Projects end-------------------------------------------------------------------*/
+
+/*Panangangarotsavam posters section start----------------------------------------------*/
+
+/* Ensure the grid fills the section and doesn't shift left */
+#speed .container-xl {
+    width: 100%;
+}
+
+.competition-card {
+    background: #111;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* FIX: This forces every image to be the exact same height/ratio */
+.competition-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5; /* Matches most sports posters */
+    overflow: hidden;
+    background: #000;
+}
+
+.competition-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Shows full poster without cropping */
+}
+
+/* FIX: Locked height prevents the "jumping" of the next section */
+.competition-name-box {
+    background-color: #212529;
+    padding: 12px 8px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px; /* Lock height here */
+    height: 80px;
+}
+
+.competition-name-box h6 {
+    color: #ef4444; /* red */
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+/* Fix for mobile text size */
+@media (max-width: 767px) {
+    .competition-name-box {
+        min-height: 90px;
+        height: 90px;
+    }
+    .competition-name-box h6 {
+        font-size: 11px;
+    }
+}
+/*Panangangarotsavam posters section end----------------------------------------------*/
 
 
-
-/*Latest News&Updates section home page start----------------------------------------------*/
+/*MAJOR PROJECTS SECTION HOME PAGE start----------------------------------------------*/
 
 /* Container to maintain a consistent aspect ratio (e.g., 16:9 or 4:3) */
     .image-container {
@@ -2991,7 +3078,7 @@ ul {
         padding-top: 1rem;
     }
 
-    /*Latest News&Updates section home page end----------------------------------------------*/
+    /*MAJOR PROJECTS SECTION HOME PAGE end----------------------------------------------*/
 
  /*Project Floodlight section home page start----------------------------------------------*/
     /* Hero Section */
