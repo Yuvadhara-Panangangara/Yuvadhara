@@ -644,4 +644,12 @@ padding: 25px 10px;
 }
 
 }
-
+/*custom added by shan to remove dropdown conflict prescribed by gemini start------------------------------*/
+/* Ensure Bootstrap dropdowns work even with global.css hover rules */
+.navbar .dropdown-menu.show {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+/*custom added by shan to remove dropdown conflict prescribed by gemini end------------------------------*/

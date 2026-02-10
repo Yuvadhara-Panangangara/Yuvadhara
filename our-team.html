@@ -4,10 +4,10 @@
       <!-- basic -->
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <!--meta name="viewport" content="width=device-width, initial-scale=1"-->
+      
       <!-- mobile metas -->
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <!--<meta name="viewport" content="initial-scale=1, maximum-scale=1"-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
       <!-- site metas -->
       <title>Yuvadhara Panangangara</title>
       <link rel="icon" type="image/x-icon" href="images/yuvadhara logo.jpg">
@@ -20,12 +20,25 @@
       <link rel="stylesheet" type="text/css" href="css/style.css">
       <!-- Responsive-->
       <link rel="stylesheet" href="css/responsive.css">
+
+      <!-- custom added by shan from motorbike template 29-08-25 (global css and index css. copied into root folder)-->
+      <link href="css/global.css" rel="stylesheet">
+	   <link href="css/index.css" rel="stylesheet">
+
+       <link rel="stylesheet" href="css/team-custom.css">
+
       <!-- fevicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
       <!-- Scrollbar Custom CSS -->
       <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
       <!-- Tweaks for older IEs-->
       <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- shan-included for drop down-->
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>-->
+      
+      <!--shan custom font rajdhani-->
+      <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
       <!-- font css -->
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@400;500;600;700;800&display=swap" rel="stylesheet">
    </head>
@@ -126,237 +139,152 @@
 
 <div class="container-fluid">
    <!--football section start----->
-    <section class="row">
-        <div class="banner-football">
-        <h1 class="banner-heading"><span class="football_banner_title_span1">The </span><span class="football_banner_title_span2">Football Team</span> </h1>
-        </div>
-    </section>
-    <section class="footballer-section">
-        <div class="row">
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/shameem.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SHAMEEM</h3></div>
-                <div class="position-footballer"><h4>GOAL KEEPER</h4></div>
+    <section class="banner-football-wrapper">
+    <div class="banner-football">
+        <h1 class="banner-heading">
+            <span class="football_banner_title_span1">The </span>
+            <span class="football_banner_title_span2">Football Team</span>
+        </h1>
+    </div>
+</section>
+
+<section class="footballer-section">
+    <div class="container py-5"> <div class="row row-tight">
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/shameem.jpg" alt="Shameem"></div>
+                <div class="player-details"><h3 class="p-name">SHAMEEM</h3><p class="p-role">GOALKEEPER</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/shinas.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SHINAS</h3></div>
-                <div class="position-footballer"><h4>GOAL KEEPER</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/shinas.jpg" alt="Shinas"></div>
+                <div class="player-details"><h3 class="p-name">SHINAS</h3><p class="p-role">GOALKEEPER</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/illyas.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ILLYAS</h3></div>
-                <div class="position-footballer"><h4>GOAL KEEPER</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/illyas.jpg" alt="Illyas"></div>
+                <div class="player-details"><h3 class="p-name">ILLYAS</h3><p class="p-role">GOALKEEPER</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/sameer.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SAMEER</h3></div>
-                <div class="position-footballer"><h4>CENTER BACK</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/sameer.jpg" alt="Sameer"></div>
+                <div class="player-details"><h3 class="p-name">SAMEER</h3><p class="p-role">CENTER BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/shafeeq.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SHAFEEQ</h3></div>
-                <div class="position-footballer"><h4>CENTER BACK</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/shafeeq.jpg" alt="Shafeeq"></div>
+                <div class="player-details"><h3 class="p-name">SHAFEEQ</h3><p class="p-role">CENTER BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/babu.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>PRAJESH BABU</h3></div>
-                <div class="position-footballer"><h4>CENTER BACK</h4></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/fayis k.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>FAYIS K</h3></div>
-                <div class="position-footballer"><h4>CENTER BACK</h4></div>
-            </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/anas.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ANAS K</h3></div>
-                <div class="position-footballer"><h4>CENTER BACKr</h4></div>
-            </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/asif.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ASIF P</h3></div>
-                <div class="position-footballer"><h4>RIGHT BACK</h4></div>
-            </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/salman.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SALMAN</h3></div>
-                <div class="position-footballer"><h4>RIGHT BACK</h4></div>
-            </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/habeeb.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>HABEEB</h3></div>
-                <div class="position-footballer"><h4>RIGHT BACK</h4></div>
-            </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/ummar.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>UMMAR FAROOQ</h3></div>
-                <div class="position-footballer"><h4>LEFT BACK</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/babu.jpg" alt="Babu"></div>
+                <div class="player-details"><h3 class="p-name">PRAJESH BABU</h3><p class="p-role">CENTER BACK</p></div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/aslam.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ASLAM K</h3></div>
-                <div class="position-footballer"><h4>LEFT BACK</h4></div>
+        <div class="row row-tight">
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/fayis k.jpg" alt="Fayis K"></div>
+                <div class="player-details"><h3 class="p-name">FAYIS K</h3><p class="p-role">CENTER BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/shamil.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SHAMIL</h3></div>
-                <div class="position-footballer"><h4>LEFT BACK</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/anas.jpg" alt="Anas K"></div>
+                <div class="player-details"><h3 class="p-name">ANAS K</h3><p class="p-role">CENTER BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/safwan 2.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SAFVAN</h3></div>
-                <div class="position-footballer"><h4>CENTRE FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/asif.jpg" alt="Asif P"></div>
+                <div class="player-details"><h3 class="p-name">ASIF P</h3><p class="p-role">RIGHT BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/afnan.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>AFNAN</h3></div>
-                <div class="position-footballer"><h4>CENTRE FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/salman.jpg" alt="Salman"></div>
+                <div class="player-details"><h3 class="p-name">SALMAN</h3><p class="p-role">RIGHT BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/jasim.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>JASIM</h3></div>
-                <div class="position-footballer"><h4>CENTRE FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/habeeb.jpg" alt="Habeeb"></div>
+                <div class="player-details"><h3 class="p-name">HABEEB</h3><p class="p-role">RIGHT BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/dilshad-.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>DILSHAD P</h3></div>
-                <div class="position-footballer"><h4>LEFT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/ummar.jpg" alt="Ummar Farooq"></div>
+                <div class="player-details"><h3 class="p-name">UMMAR FAROOQ</h3><p class="p-role">LEFT BACK</p></div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/arshad.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ARSHAD</h3></div>
-                <div class="position-footballer"><h4>LEFT FORWARD</h4></div>
+        <div class="row row-tight">
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/aslam.jpg" alt="Aslam K"></div>
+                <div class="player-details"><h3 class="p-name">ASLAM K</h3><p class="p-role">LEFT BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/ismail.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ISMAIL</h3></div>
-                <div class="position-footballer"><h4>LEFT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/shamil.jpg" alt="Shamil"></div>
+                <div class="player-details"><h3 class="p-name">SHAMIL</h3><p class="p-role">LEFT BACK</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/hameed.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>HAMEED</h3></div>
-                <div class="position-footballer"><h4>RIGHT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/safwan 2.jpg" alt="Safvan"></div>
+                <div class="player-details"><h3 class="p-name">SAFVAN</h3><p class="p-role">CENTRE FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/anshid.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ANSHID</h3></div>
-                <div class="position-footballer"><h4>RIGHT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/afnan.jpg" alt="Afnan"></div>
+                <div class="player-details"><h3 class="p-name">AFNAN</h3><p class="p-role">CENTRE FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/suroor.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SUROOR</h3></div>
-                <div class="position-footballer"><h4>CENTRE FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/jasim.jpg" alt="Jasim"></div>
+                <div class="player-details"><h3 class="p-name">JASIM</h3><p class="p-role">CENTRE FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/sabir.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SABIR</h3></div>
-                <div class="position-footballer"><h4>LEFT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/dilshad-.jpg" alt="Dilshad P"></div>
+                <div class="player-details"><h3 class="p-name">DILSHAD P</h3><p class="p-role">LEFT FORWARD</p></div>
             </div>
         </div>
 
-        <div class="row">
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/razi.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>RAZI</h3></div>
-                <div class="position-footballer"><h4>CENTRE FORWARD</h4></div>
+        <div class="row row-tight">
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/arshad.jpg" alt="Arshad"></div>
+                <div class="player-details"><h3 class="p-name">ARSHAD</h3><p class="p-role">LEFT FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/shihad.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>SHIHAD</h3></div>
-                <div class="position-footballer"><h4>RIGHT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/ismail.jpg" alt="Ismail"></div>
+                <div class="player-details"><h3 class="p-name">ISMAIL</h3><p class="p-role">LEFT FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/afnan melekulam.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>AFNAN</h3></div>
-                <div class="position-footballer"><h4>LEFT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/hameed.jpg" alt="Hameed"></div>
+                <div class="player-details"><h3 class="p-name">HAMEED</h3><p class="p-role">RIGHT FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/bilal.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>BILAL</h3></div>
-                <div class="position-footballer"><h4>LEFT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/anshid.jpg" alt="Anshid"></div>
+                <div class="player-details"><h3 class="p-name">ANSHID</h3><p class="p-role">RIGHT FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/vijay.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>VIJAY</h3></div>
-                <div class="position-footballer"><h4>RIGHT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/suroor.jpg" alt="Suroor"></div>
+                <div class="player-details"><h3 class="p-name">SUROOR</h3><p class="p-role">CENTRE FORWARD</p></div>
             </div>
-            <div class="column-footballer col-4 col-sm-4 col-md-3 col-lg-2 col-xl-2">
-                <div class="image-footballer">
-                    <img src="images/Team list football/ansar.jpg">
-                </div>
-                <div class="nameof-footballer"><h3>ANSAR</h3></div>
-                <div class="position-footballer"><h4>LEFT FORWARD</h4></div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/sabir.jpg" alt="Sabir"></div>
+                <div class="player-details"><h3 class="p-name">SABIR</h3><p class="p-role">LEFT FORWARD</p></div>
             </div>
         </div>
 
-    </section>
+        <div class="row row-tight">
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/razi.jpg" alt="Razi"></div>
+                <div class="player-details"><h3 class="p-name">RAZI</h3><p class="p-role">CENTRE FORWARD</p></div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/shihad.jpg" alt="Shihad"></div>
+                <div class="player-details"><h3 class="p-name">SHIHAD</h3><p class="p-role">RIGHT FORWARD</p></div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/afnan melekulam.jpg" alt="Afnan"></div>
+                <div class="player-details"><h3 class="p-name">AFNAN</h3><p class="p-role">LEFT FORWARD</p></div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/bilal.jpg" alt="Bilal"></div>
+                <div class="player-details"><h3 class="p-name">BILAL</h3><p class="p-role">LEFT FORWARD</p></div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/vijay.jpg" alt="Vijay"></div>
+                <div class="player-details"><h3 class="p-name">VIJAY</h3><p class="p-role">RIGHT FORWARD</p></div>
+            </div>
+            <div class="col-4 col-md-3 col-lg-2 player-card">
+                <div class="image-box green-border"><img src="images/Team list football/ansar.jpg" alt="Ansar"></div>
+                <div class="player-details"><h3 class="p-name">ANSAR</h3><p class="p-role">LEFT FORWARD</p></div>
+            </div>
+        </div>
+
+    </div> </section>
 <!--football section end----->    
 <!--cricket section start----->
         <div class="banner-cricket col-12">

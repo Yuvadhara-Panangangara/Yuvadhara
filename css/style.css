@@ -1657,100 +1657,122 @@ body {
 
 /*test-contact page end-------------------------------------------------------------*/
 
-/*test-Membership page start-------------------------------------------------------------*/
 
 
 /*test-Membership page start-------------------------------------------------------------*/
 
 
-.member-container{
-  width: 100%;
-  height: auto;
-   justify-content: space-between;
-   align-items: center;
-  
+/* Container & Section Base */
+.committee-section {
+  background-color: #fcfcfc;
+  padding: 60px 0;
 }
- .row1members { 
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: row;  
-  justify-content: space-evenly;
-  align-items: center;
-  padding: 10px;
-  
- }
 
- .row0-executivecommittee h2{
-  text-align: center;
-  margin-top: 10px;
-  font-weight: bold;
-  margin: auto;
-  
-  
- }
+.section-main-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #001d3d; /* Navy */
+  letter-spacing: 1px;
+}
 
- 
- .row1-executivecommittee .row2-executivecommittee{
+.text-gold { color: #ffc107; }
+
+.title-divider {
+  width: 60px;
+  height: 4px;
+  background: #ffc107;
+  margin: 15px auto 40px;
+  border-radius: 2px;
+}
+
+/* The Card Design */
+.member-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px 15px;
   text-align: center;
-  
-  margin: auto;
-  display: flex;
-  width: 50%;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  border: 1px solid #f0f0f0;
   height: 100%;
-  font-weight: bold;
-
- }
-.column-member{
-  text-align: center;
-  align-items: center;
-  width: 100%;
-  height: auto;
   
-  padding: 20px;
-  /*border: 1px solid #ddd;*/
-  border-radius: 5px;
-  margin: auto;
+  /* ADDED THIS LINE FOR VERTICAL SPACING */
+  margin-bottom: 20px; 
+}
+
+/* Elite cards for President/Secretary */
+.member-card.elite {
+  border-top: 4px solid #ffc107;
+  padding: 30px 20px;
+}
+
+.member-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  border-color: #ffc107;
+}
+
+/* Image Wrapper (Fixed Size & Circular) */
+.member-img-wrapper {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
   overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
 }
 
-.member-content {
-  
+.member-card.elite .member-img-wrapper {
+  width: 130px;
+  height: 130px;
+}
+
+.member-card:hover .member-img-wrapper {
+  transform: scale(1.1);
+}
+
+.member-img-wrapper img {
   width: 100%;
-  height: auto;
-  margin: 5px;
-  margin: auto;
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 0px;
-  box-shadow: 0 2px 5px rgba(44, 43, 43, 0.1);
-  
-}
-.member-img{
-  width: 100%;
-  height: auto;
-  margin: auto;
-  border-radius: 10px;
-}
-.member-img:hover{
-  width: auto;
-  height: auto;
-  scale: 110%;
-  border-radius: 10px;
-}
-.member-heading{
-   width: 100%;
   height: 100%;
-  font-weight: bold;
+  object-fit: cover;
 }
 
-.left-side-title{
-  text-align: center;
+/* Text Content */
+.member-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
 }
 
+.member-role {
+  font-size: 0.85rem;
+  color: #777;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+/* Mobile Tweaks */
+@media (max-width: 767px) {
+  .member-img-wrapper {
+    width: 80px;
+    height: 80px;
+  }
+  .member-card.elite .member-img-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+  .member-name { font-size: 0.95rem; }
+  .member-role { font-size: 0.75rem; }
+  .committee-section { padding: 40px 10px; }
+}
 /*test-Membership page end-------------------------------------------------------------*/
 
-/*test-Tournament page Start-------------------------------------------------------------*/
+/*test our-team page Start-------------------------------------------------------------*/
 
 .container-tournament{
   width: 100%;
@@ -1876,7 +1898,7 @@ body {
     text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.929);
     font-family: "Oswald", Sans-serif;
 }
-/*test-Tournament page end-------------------------------------------------------------*/
+/*test our-team page end-------------------------------------------------------------*/
 
 /*test-ad block page in Home page start-------------------------------------------------------------*/
 
@@ -1933,60 +1955,160 @@ body {
 
 /*test-ad block page in Home page end-------------------------------------------------------------*/
 
-/*test-activity page in Home page start-------------------------------------------------------------*/
+/*tournaments page start-------------------------------------------------------------*/
 
-.tournament-left-image{
- 
-  max-height: 30rem;
-  align-items: right;
-  border-radius: 10px;
-  object-fit: cover;
- 
-  
+/* --- Global & Hero Styles --- */
+:root {
+    --navy: #001d3d;
+    --gold: #ffc107;
+    --sports-green: #14bf0b;
 }
-.banner-tournament{
-  width: 100%;
-  height: 20em;
-  opacity: 1;
 
-  background-image: url(../images/banner-bg.png);
+.tournament-hero {
+    background: linear-gradient(rgba(0, 29, 61, 0.8), rgba(0, 29, 61, 0.8)), 
+                url('../images/banner-bg.png');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 0;
+    color: white;
+    margin-bottom: 40px;
 }
-.banner-heading-football{
-  color: #14bf0b;
-  text-align: left;
-  margin: 0;
-  
-  
- 
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    letter-spacing: 2px;
 }
-.football_banner_title_span_activity1 {
+
+.text-gold { color: var(--gold) !important; }
+
+/* --- Tournament Content --- */
+.tournament-block { padding-top: 20px; }
+
+.org-name {
+    color: #888;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.tournament-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.tournament-desc {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
+.main-tournament-img {
     width: 100%;
-    /* font-size: 50px;*/
-    color: #2e2c2c;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-family: "Oswald", Sans-serif;
+    height: 380px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
-.football_banner_title_span_activity2 {
+
+.image-zoom-container {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.image-zoom-container:hover .main-tournament-img {
+    transform: scale(1.03);
+}
+
+/* --- Result Cards --- */
+.result-text-card {
+    background: #fff;
+    padding: 25px;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid #eee;
+}
+
+.winner-border { border-top: 5px solid var(--gold); }
+.runner-border { border-top: 5px solid #6c757d; }
+
+.event-year { font-size: 0.85rem; color: #999; margin-bottom: 8px; font-weight: bold; }
+
+.result-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.winner-text { color: var(--gold); }
+.runner-text { color: #444; }
+
+.result-details { font-size: 0.95rem; line-height: 1.6; color: #555; margin: 0; }
+
+.malayalam-text {
+    font-family: 'Kartika', 'ML-TTRevathi', sans-serif; /* Standard Malayalam web fonts */
+    text-align: justify;
+}
+
+.result-img-card {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.result-img-card img {
     width: 100%;
-   /* font-size: 50px;*/
-    color: #0ca616;
+    height: 100%;
+    object-fit: cover;
+    min-height: 220px;
+}
+
+.img-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    color: white;
     font-weight: bold;
+    border-radius: 4px;
     text-transform: uppercase;
-    font-family: "Oswald", Sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
-.main-row-tournament{
-  max-width: fit-content;
+.bg-gold { background-color: var(--gold); color: #000; }
+
+.section-divider {
+    margin: 80px 0;
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #ccc, transparent);
+    opacity: 0.4;
 }
 
-
-.winner-runner{
-  border-radius: 5px;
+/* --- Responsive Adjustments --- */
+@media (max-width: 991px) {
+    .main-tournament-img { height: 280px; }
+    .tournament-title { font-size: 1.8rem; }
+    .tournament-block { text-align: center; }
 }
 
-/*test-activity page in Home page end-------------------------------------------------------------*/
+@media (max-width: 576px) {
+    .tournament-hero { padding: 50px 15px; }
+    .result-text-card { padding: 20px; }
+}
+
+/*tournaments page end-------------------------------------------------------------*/
 
 /*test-drop down menu start-------------------------------------------------------------*/
 
@@ -2902,7 +3024,7 @@ ul {
   background: none;
   border: none;
   cursor: pointer;
-  color: #555; /* A neutral color for the icon */
+  color: #eb4d4d; /* A neutral color for the icon */
   font-size: 1.2rem;
   padding: 5px;
   transition: color 0.2s;
