@@ -392,86 +392,141 @@ button {
 /* banner section end */
 
 
-/* about section start */
+/* about section start -------------------------------------------------------*/
 
-.about_section {
-    width: 100%;
-    float: left;
-    height: auto;
-    padding: 90px 0px;
-    background-size: 100%;
+/* --- Vertical Timeline with Top-Left Uniform Images --- */
+
+.vertical-timeline {
+    list-style: none;
+    padding: 0;
+    position: relative;
+    margin-top: 20px;
 }
 
-.margin_top0 {
-    margin-top: 0px;
+.vertical-timeline::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: #444; /* Line color */
 }
 
-.about_title_span1 {
-    width: 100%;
-    float: left;
-    font-size: 50px;
-    color: #363635;
-    font-weight: bold;
-    padding-top: 10px;
-    text-align: left;
-    text-transform: uppercase;
-    font-family: "Oswald", Sans-serif;
+.timeline-item {
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 30px;
 }
 
-.about_title_span2{
-     width: 100%;
-    float: left;
-    font-size: 50px;
-    color: #14bf0b;
-    font-weight: bold;
-    padding-top: 10px;
-    text-align: left;
-    text-transform: uppercase;
-    font-family: "Oswald", Sans-serif;
+/* Timeline Dots */
+.t-dot {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    background: #444;
+    border-radius: 50%;
+    z-index: 2;
+    border: 3px solid #1a1a1a; /* Matches your background */
 }
+
+.t-dot:hover {
+    position: absolute;
+    left: 0;
+    top: 15px;
+    width: 16px;
+    height: 16px;
+    background: #6cbd15;
+    border-radius: 50%;
+    z-index: 2;
+    border: 3px solid #1a1a1a; /* Matches your background */
+}
+
+.active-dot {
     
-
-
-.about_text {
-    width: 95%;
-    margin: 0 auto;
-    font-size: 16px;
-    color: #292927;
-    padding-top: 55px;
-    text-align: left;
+    box-shadow: 0 0 8px rgba(108, 189, 21, 0.6);
 }
 
-.read_bt {
-    width: 170px;
-    margin: 0 auto;
-    text-align: center;
+/* Event Card */
+.t-content-card {
     display: flex;
-    padding-top: 55px;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 15px;
+    background: #252525;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #333;
+}
+.t-content-card:hover {
+    display: flex;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 15px;
+    background: #000000;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #6cbd15;
 }
 
-.read_bt a {
+/* Uniform Thumbnail Styling */
+.t-thumb-box {
+    flex-shrink: 0; /* Prevents image from shrinking */
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #111;
+    border: 1px solid #444;
+}
+
+.t-thumb-box img {
     width: 100%;
-    float: left;
-    font-size: 16px;
-    background-color: #6cbd15;
-    color: #fefefc;
-    text-align: center;
+    height: 100%;
+    object-fit: cover; /* CRITICAL: Makes images uniform regardless of original size */
+    display: block;
+}
+
+/* Text Details */
+.t-details {
+    flex-grow: 1;
+}
+
+.t-date {
+    display: block;
+    font-size: 11px;
+    color: #6cbd15;
+    font-weight: 700;
     text-transform: uppercase;
-    padding: 10px;
+    margin-bottom: 3px;
 }
 
-.read_bt a:hover {
-    color: #fefefc;
-    background-color: #252525;
+.t-details h4 {
+    font-size: 17px;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    font-weight: 600;
 }
 
-.about_img {
-    width: 100%;
-    float: left;
+.t-details p {
+    font-size: 14px;
+    color: #aaaaaa;
+    line-height: 1.5;
+    margin: 0;
 }
 
+/* Responsive: Smaller screens adjustments */
+@media (max-width: 480px) {
+    .t-content-card {
+        flex-direction: column; /* Stack image and text on very small phones */
+    }
+    .t-thumb-box {
+        width: 60px;
+        height: 60px;
+    }
+}
 
-/* about section end */
+/* about section end --------------------------------------------------------------*/
 
 
 /* games section start */
@@ -1256,18 +1311,17 @@ input::placeholder {
   box-sizing: border-box;
 }
 
+/* Fix for the Zoom/Overflow Issue */
 .blog-card {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem auto;
-  box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
-  margin-bottom: 1.6%;
-  background: #fff;
-  line-height: 1.4;
-  font-family: sans-serif;
-  border-radius: 5px;
-  overflow: hidden;
-  z-index: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0; /* Changed from auto */
+    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%; /* Ensure it fills the col-6 */
+    height: 100%; /* Ensures cards in the same row are equal height */
 }
 .blog-card a {
   color: inherit;
@@ -1406,7 +1460,7 @@ input::placeholder {
 @media (min-width: 640px) {
   .blog-card {
     flex-direction: row;
-    max-width: 700px;
+    
   }
   .blog-card .meta {
     flex-basis: 40%;
@@ -1906,57 +1960,78 @@ body {
 
 /*test-ad block page in Home page start-------------------------------------------------------------*/
 
-/* Container Fix */
-.ad-section {
-    width: 100%;
-    background-color: #fff;
-}
-
-/* Corrected selectors with commas */
-.column-block {
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-}
-
-.row-block-inner {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-}
-
+/* --- Global Sponsor Image Fix --- */
 .ad-image {
-    width: 100% !important; /* Force full width of container */
-    height: auto;
-    object-fit: cover;
+    width: 100% !important;
+    height: 100% !important;
+    /* Change 'cover' to 'contain' to see the full image */
+    object-fit: contain; 
+    
+    /* Add a background color to fill the empty space around the image */
+    background-color: #f8f9fa; 
+    
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border: 2px solid #ffffff;
+    display: block;
 }
 
-/* Hide Carousel Arrows */
-.carousel-control-prev, 
-.carousel-control-next {
-    display: none !important;
+
+/* --- Section 1: Tournament Sponsors --- */
+.ad-section .column-block {
+    height: 400px; /* Base height for the whole column */
 }
 
-/* Ensure the carousel doesn't shrink */
-.carousel {
+/* For columns with two stacked images */
+.ad-section .row-block-inner {
+    height: calc(50% - 5px); /* Half height minus margin */
     width: 100%;
+    margin-bottom: 10px;
 }
 
-.carousel-inner {
-    border-radius: 10px;
-    overflow: hidden;
+/* For columns with one single tall image */
+.ad-section .column-block > .ad-image {
+    height: 100% !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
-/* Mobile Specific Tweaks */
+/* --- Section 2: Shootout Sponsors --- */
+.ad-section2 .column1-block {
+    height: 500px;
+}
+
+.ad-section2 .column2-block {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* The top wide banner in Section 2 */
+.ad-section2 .column2-block > .row-block-inner:first-child {
+    height: 240px; 
+}
+
+/* The bottom row with 3 small images in Section 2 */
+.ad-section2 .column2-block > .row-block-inner:last-child {
+    height: 250px;
+    display: flex;
+    gap: 10px;
+}
+
+.col-row-block-inner {
+    flex: 1;
+    height: 100%;
+}
+
+/* Responsive: Adjust heights for mobile so they don't look too stretched */
 @media (max-width: 767px) {
-    .column-block {
-        margin-bottom: 20px; /* Space between sponsors on mobile */
-    }
+    .ad-section .column-block { height: 250px; }
+    .ad-section2 .column1-block { height: 300px; }
+    .ad-section2 .column2-block { height: auto; }
+    .ad-section2 .column2-block > .row-block-inner:last-child { height: 150px; }
 }
-
 /*test-ad block page in Home page end-------------------------------------------------------------*/
 
 /*tournaments page start-------------------------------------------------------------*/
@@ -3748,15 +3823,24 @@ ul {
 /*Footer section new start--------------------------------------------------------------------------------*/
 
 
+/* --- Optimized Footer Fix --- */
+
 .common-footer {
     background-color: #111111; /* Deep Black */
     padding: 60px 0 30px 0;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
+    
+    /* CRITICAL FIX: This stops the "Page Turning Black" / Alignment issue */
+    clear: both; 
+    display: block;
+    width: 100%;
+    float: left; /* Keeps it consistent with your older layout logic */
 }
 
 .footer-content {
     text-align: center;
+    width: 100%;
 }
 
 /* Social Icons Styling */
@@ -3767,10 +3851,11 @@ ul {
     margin-bottom: 30px;
 }
 
+/* Ensure FontAwesome icons show up inside the flex circle */
 .common-icon-circle {
     width: 45px;
     height: 45px;
-    border: 2px solid rgba(41, 241, 15, 0.3); /* Subtle yellow border */
+    border: 2px solid rgba(108, 189, 21, 0.3); /* Matches your green theme */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3782,11 +3867,11 @@ ul {
 }
 
 .common-icon-circle:hover {
-    background-color: #57df21; /* Volt Yellow on hover */
-    color: #000;
-    border-color: #4ee413;
+    background-color: #6cbd15; /* Your Green Theme */
+    color: #ffffff;
+    border-color: #6cbd15;
     transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(241, 196, 15, 0.4);
+    box-shadow: 0 5px 15px rgba(108, 189, 21, 0.4);
 }
 
 /* Divider */
@@ -3796,6 +3881,7 @@ ul {
     background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
     margin: 20px auto;
     width: 60%;
+    float: none; /* Override old global float settings */
 }
 
 /* Copyright & Designer Link */
@@ -3803,10 +3889,11 @@ ul {
     font-size: 14px;
     color: #888;
     letter-spacing: 0.5px;
+    margin-bottom: 0;
 }
 
 .designer-link {
-    color: #3ed220;
+    color: #6cbd15; /* Matches your Green */
     font-weight: 600;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -3817,7 +3904,7 @@ ul {
     color: #ffffff;
 }
 
-/* Subtle underline effect for the designer link */
+/* Subtle underline effect */
 .designer-link::after {
     content: '';
     position: absolute;
