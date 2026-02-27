@@ -1832,6 +1832,8 @@ body {
 
 /*test our-team page Start-------------------------------------------------------------*/
 
+/*our-team football section start---------------------------------------*/
+
 .container-tournament{
   width: 100%;
   height: auto;
@@ -1841,25 +1843,28 @@ body {
   
 }
 .banner-football{
-  width: 100%;
-  height: 20em;
-  opacity: 1;
-  background-image: url(../images/football-team-banner-cropped.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  
-
+    width: 100%;
+    height: 20em;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/football-team-banner-cropped.jpg);
+    /* THE FIX: Flexbox centering */
+    display: flex;
+    align-items: center;     /* Vertical Center */
+    justify-content: center;  /* Horizontal Center */
 }
-.banner-heading{
-  color: #14bf0b;
-  text-align: center;
-  margin: 0;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.banner-heading {
+    /* Remove the old positioning math that causes the drift */
+    position: relative; 
+    margin: 0;
+    transform: none; 
+    top: auto;
+    left: auto;
+    text-align: center;
+    z-index: 2;
 }
 .football_banner_title_span1 {
     width: 100%;
@@ -1880,32 +1885,22 @@ body {
     font-family: "Oswald", Sans-serif;
 }
 .footballer-section{
-  
- 
-
   margin-top: 5vh;
 }
 .row{
   
-  
   align-items: center;
   padding: 0.5vw;
- 
-  
    
 }
 .column-footballer{
   width: auto;
   height: auto;
-
   border-radius: 2px;
-
   padding: 5px;
 
 }
 .image-footballer img{
-
- 
   aspect-ratio: 3/4;
   border-radius: 10px;
   border-style: inset;
@@ -1928,15 +1923,18 @@ body {
   color: #ffffff;
  
 }
-.banner-cricket{
-  width: 100%;
-  height: 20em;
-  opacity: 1;
-  background-image: url(../images/cricket-team-cropped.jpeg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
+.banner-cricket {
+    width: 100%;
+    height: 20em;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url(../images/cricket-team-cropped.jpeg);
+    /* THE FIX: Flexbox centering */
+    display: flex;
+    align-items: center;     /* Vertical Center */
+    justify-content: center;  /* Horizontal Center */
 }
 .cricket_banner_title_span1 {
     width: 100%;
@@ -1956,7 +1954,210 @@ body {
     text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.929);
     font-family: "Oswald", Sans-serif;
 }
-/*test our-team page end-------------------------------------------------------------*/
+/*our-team football section end-------------------------------------------------------*/
+
+
+/*our-team cricket section start-------------------------------------------------------*/
+/* --- Cricket Specific Styles --- */
+
+.banner-cricket-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.banner-cricket {
+    width: 100%;
+    height: 20em;
+    position: relative; /* Essential for the absolute heading inside */
+    background-image: url('../images/cricket-team-cropped.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+/* Ensure headings are centered inside banners */
+.banner-football, .banner-cricket {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cricketer-section {
+    margin-top: 5vh;
+    background-color: #1c1c1c; /* Matching your tournament background */
+}
+
+/* Reusing your player card styles for consistency */
+.player-card {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.image-box.green-border img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px inset #0ed826;
+    padding: 5px;
+    object-fit: cover;
+}
+
+.p-name {
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 8px;
+    text-transform: uppercase;
+}
+
+.p-role {
+    font-size: 10px;
+    color: #0ed826; /* Cricket green theme */
+    text-transform: uppercase;
+}
+
+/* Responsive adjustments for mobile (3 players per row) */
+@media (max-width: 767px) {
+    .p-name { font-size: 10px; }
+    .p-role { font-size: 8px; }
+    .banner-cricket, .banner-football { height: 15em; }
+    .cricket_banner_title_span1, .cricket_banner_title_span2 { font-size: 30px; }
+}
+/*our-team cricket section end-------------------------------------------------------*/
+
+/*our-team badminton section start-------------------------------------------------------*/
+/* --- Badminton Specific Styles --- */
+
+.banner-badminton {
+    width: 100%;
+    height: 20em;
+    background-image: url('../images/badminton-banner.jpg'); /* Ensure this image exists */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badminton_banner_title_span1 {
+    font-size: 50px;
+    color: #ffcc00;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(75, 89, 97, 0.6);
+    font-family: "Oswald", Sans-serif;
+}
+
+.badminton_banner_title_span2 {
+    font-size: 50px;
+    color: #ffcc00; /* Cyan color for Badminton */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.5);
+    font-family: "Oswald", Sans-serif;
+}
+
+.badminton-player-section {
+    background-color: #1c1c1c;
+    padding-bottom: 50px;
+}
+
+/* Specific Border for Badminton Players */
+.yellow-border img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px inset #ffcc00;
+    padding: 5px;
+    object-fit: cover;
+}
+
+/* Reusing your shared player styles */
+.player-card .p-role {
+    color: #ffcc00; /* Matching text color for roles */
+}
+
+/* Responsive fix for the new section */
+@media (max-width: 767px) {
+    .badminton_banner_title_span1, 
+    .badminton_banner_title_span2 {
+        font-size: 30px;
+    }
+    .banner-badminton {
+        height: 12em;
+    }
+}
+
+/*our-team badminton section end-------------------------------------------------------*/
+
+/*our-team volleyball section start-------------------------------------------------------*/
+/* --- Volleyball Specific Styles --- */
+
+.banner-volleyball {
+    width: 100%;
+    height: 20em;
+    background-image: url('../images/volleyball-banner.jpg'); /* Add your image here */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.volleyball_banner_title_span1 {
+    font-size: 50px;
+    color: #ff8901;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
+    font-family: "Oswald", Sans-serif;
+}
+
+.volleyball_banner_title_span2 {
+    font-size: 50px;
+    color: #ff8901; /* Volleyball Gold */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.3);
+    font-family: "Oswald", Sans-serif;
+}
+
+.volleyball-player-section {
+    background-color: #1c1c1c;
+    padding-bottom: 50px;
+}
+
+/* Yellow Border for Volleyball Players */
+.orange-border img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px inset #ff8901;
+    padding: 5px;
+    object-fit: cover;
+}
+
+.volleyball-player-section .p-role {
+    color: #ff8901; /* Matching Gold text color for roles */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 767px) {
+    .volleyball_banner_title_span1, 
+    .volleyball_banner_title_span2 {
+        font-size: 30px;
+    }
+    .banner-volleyball {
+        height: 12em;
+    }
+}
+/*our-team volleyball section end-------------------------------------------------------*/
+
+/*test our-team page end-------------------------------------------------------------------------------*/
+
+
 
 /*test-ad block page in Home page start-------------------------------------------------------------*/
 
@@ -3735,6 +3936,10 @@ ul {
 
 .pbl-hero-title { font-weight: 900; letter-spacing: 1px; font-size: 3.2rem; }
 .pbl-text-yellow { color: var(--pbl-primary-yellow); }
+
+.pbl-hero-subtitle{
+    color: white;
+}
 
 .pbl-org-tag { color: #888; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; }
 .pbl-main-title { font-weight: 800; font-size: 2.5rem; color: var(--pbl-dark-black); margin-bottom: 20px; }
