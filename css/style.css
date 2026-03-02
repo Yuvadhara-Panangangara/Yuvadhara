@@ -2948,11 +2948,13 @@ body {
 }
  /*Trophies and awards section end----------------------------------------*/
 
-/*Library section book banner and search start----------------------------------------*/
+/*Library section start----------------------------------------*/
+/* --- Library Section Responsive Styling --- */
+
 .banner-book-main {
     width: 100%;
-    height: fit-content; /* Full viewport height: 100vh-edited to fit content custom shan */
-    background: linear-gradient(90deg, #6cbd15 0%, #5ea413 100%); /* Orange gradient */
+    height: fit-content;
+    background: linear-gradient(90deg, #6cbd15 0%, #5ea413 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2963,46 +2965,36 @@ body {
 .banner-book-content {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space out text and book */
-    max-width: 1200px; /* Max width of content inside banner */
-    width: 90%; /* Responsive width */
-    padding: 20px;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 90%;
+    padding: 20px 10px;
     box-sizing: border-box;
 }
 
 .text-section {
-    flex: 1; /* Allows text section to take up available space */
+    flex: 1;
     color: white;
-    font: "rajdhani";
     text-align: left;
-    padding-right: 40px; /* Space between text and book */
-    
-}
-
-.text-section .author {
-    font-size: 1em;
-    font-weight: bold;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
+    padding-right: 40px;
 }
 
 .text-section h1 {
-    font-size: 4em; /* Large heading */
+    font-size: 3.5rem;
     margin: 0 0 20px 0;
     line-height: 1.1;
-    
     text-transform: uppercase;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    
+    font-weight: bold;
 }
 
 .text-section .description {
     font-size: 1.1em;
     line-height: 1.6;
     margin-bottom: 30px;
-    max-width: 500px; /* Control description length */
-    white-space: nowrap;;
+    max-width: 500px;
+    /* Fixed: Removed nowrap to allow text to wrap on mobile */
+    white-space: normal; 
 }
 
 /* Search bar styles */
@@ -3010,12 +3002,11 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 450px; /* Length of the search bar */
+    max-width: 450px;
     background-color: #fff;
     border-radius: 50px;
     padding: 10px 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .search-input {
@@ -3024,227 +3015,170 @@ body {
     outline: none;
     padding: 5px 10px;
     font-size: 1.1em;
-    color: #333;
-    background-color: transparent;
-}
-
-.search-input::placeholder {
-    color: #aaa;
 }
 
 .search-button {
     background: none;
     border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 5px 10px;
     color: #555;
     font-size: 1.2em;
-    transition: color 0.2s ease-in-out;
-}
-
-.search-button:hover {
-    color: #FF6F00; /* Matches the lighter orange of the banner */
 }
 
 .book-mockup {
-    flex-shrink: 0; /* Prevents book from shrinking */
-    width: 300px; /* Adjust book image width as needed */
-    height: auto;
-    transform: rotate(0deg); /* Tilt the book as in the image */
-    border-radius: 0px; /* Slight rounded edges for the book */
-    margin-right: 0px; /* Pull the book slightly off to the right */
-    position: relative;
-    z-index: 1; /* Ensure book is above other elements if any */
+    flex-shrink: 0;
+    width: 250px;
 }
 
 .book-mockup img.book-cover {
     width: 100%;
     height: auto;
-    display: block; /* Remove extra space below image */
-    border-radius: 0px; /* Apply to the image itself */
 }
 
-/* Responsive adjustments */
+/* Bookshelf Grid System */
+/* Container for the list */
+.bookshelf {
+    padding: 60px 20px 120px 20px;
+    background: #ffffff;
+    width: 100%;
+    clear: both;
+}
+
+#bookshelf-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Base horizontal gap */
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.book {
+    width: 150px;
+    /* CHANGE: Height auto allows the container to grow with the text */
+    height: auto; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* ADD: Bottom margin provides a safety buffer between rows */
+    margin-bottom: 40px; 
+}
+
+.book img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 0 5px 5px 0;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.2);
+    /* Ensure image stays at the top of its container */
+    position: relative; 
+}
+
+.book:hover img {
+    transform: translateX(-10px);
+    box-shadow: 8px 5px 20px rgba(0,0,0,0.3);
+}
+
+.book-info {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px; /* Space between image and text */
+}
+
+.book-info h4 {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    color: #333;
+    line-height: 1.3;
+}
+
+.book-info p {
+    font-size: 13px;
+    color: #777;
+    margin: 0;
+}
+
+/* --- Specific Mobile Fix --- */
+@media (max-width: 767px) {
+    #bookshelf-list {
+        gap: 20px; /* Tighter horizontal gap on phones */
+    }
+    
+    .book {
+        /* Extra breathing room on mobile to prevent any overlap */
+        margin-bottom: 80px; 
+    }
+    
+    .book-info h4 {
+        font-size: 14px; /* Slightly smaller text for mobile */
+    }
+}
+
+/* 3D Spine effect */
+.book::before, .book::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border: 1px solid #d9d9d9;
+    z-index: -1;
+    visibility: hidden;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.book::before { left: -3px; }
+.book::after { left: -6px; }
+
+.book:hover::before, .book:hover::after {
+    visibility: visible;
+}
+
+/* --- Responsive Adjustments --- */
+
 @media (max-width: 768px) {
     .banner-book-content {
-        flex-direction: column; /* Stack items vertically on small screens */
+        flex-direction: column;
         text-align: center;
-        padding: 40px 20px;
     }
 
     .text-section {
         padding-right: 0;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .text-section h1 {
-        font-size: 3em;
-    }
-
-    .text-section .description {
-        max-width: 100%;
-    }
-
-    .search-container {
-        max-width: 100%; /* Search bar can be wider on small screens */
-        margin-top: 20px;
+        font-size: 2.5rem;
     }
 
     .book-mockup {
-        transform: rotate(0deg); /* No tilt on small screens */
-        margin-right: 0;
-        width: 180px; /* Smaller book on small screens */
+        width: 180px;
+    }
+
+    #bookshelf-list {
+        gap: 50px 20px;
     }
 }
 
 @media (max-width: 480px) {
     .text-section h1 {
-        font-size: 2.5em;
+        font-size: 2rem;
     }
-    .search-input {
-        font-size: 1em;
-    }
-    .search-button {
-        font-size: 1em;
+    .book {
+        width: 130px; /* Slightly smaller books on tiny screens */
+        height: 190px;
     }
 }
-
-/*Library section book banner and search end----------------------------------------*/
-
-/*Library section book list start----------------------------------------*/
-.bookshelf {
-  width: 100%;
-  height: fit-content;
-  background: rgb(255,255,255);
-  background-position: center center;
-  background-size: cover;
-  position:relative;  
-  margin-top: 5vh;
-}
-
-.book, .book img, .book::after,
-.book::before {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-body,
-html {
-  width: 100%;
-  height: 100%;
-  display: table;
-  text-align: center;
-}
-
-ul {
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  top: 0.5vh;
-  left: 20 px;
-  
-}
-
-.list-inline {
-  display: block;
-  margin: 0 auto;
-  list-style: none;
-  margin-top: 3vh;
-}
-.list-inline > li {
-  display: inline-block;
-  margin-left: 2em;
-}
-.list-inline > li:first-child {
-  margin-left: 0;
-}
-
-.book {
-  cursor: pointer;
-  display: block;
-  width: 150px;
-  height: 220px; 
-  position: relative;
-  background: white;
-  z-index: 1;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 9px 20px 0 rgba(0, 0, 0, 0.25);
-  
-  -webkit-transition: box-shadow 0.3s linear;
-  transition: box-shadow 0.3s linear;
-}
-
-.book img {
-  width: inherit;
-  height: inherit;
-  -webkit-transform-origin: 0 50%;
-          transform-origin: 0 50%;
-  -webkit-transform: rotateY(0);
-          transform: rotateY(0);
-  -webkit-transition: all 0.45s ease;
-  transition: all 0.45s ease;
-}
-
-.book:hover {
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25), 0 9px 20px 0 rgba(0, 0, 0, 0.45);
-}
-.book:hover img {
-  -webkit-transform: rotateY(-25deg);
-          transform: rotateY(-25deg);
-  box-shadow: 1px 1px 5px 5px rgba(0, 0, 0, 0.2);
-}
-
-.book::after,
-.book::before {
-  content: "";
-  display: block;
-  width: inherit;
-  height: inherit;
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  background: white;
-  border: 1px solid #d9d9d9;
-}
-
-.book::before {
-  left: -3px;
-}
-
-.book::after {
-  left: -6px;
-}
-.book-info {
-  margin-top: 10px;
-  text-align: center;
-  color: #333;
-}
-
-.book-info h4 {
-  font-size: 14px;
-  font-weight: bold;
-  margin: 0;
-  line-height: 1.0;
-}
-
-.book-info p {
-  font-size: 12px;
-  margin: 0;
-  color: #666;
-}
-/* By default, hide the book's spine */
-.book::before,
-.book::after {
-  visibility: hidden;
-}
-
-/* Show the spine when the book is hovered over */
-.book:hover::before,
-.book:hover::after {
-  visibility: visible;
-}
-
-/*Library section book list  end----------------------------------------*/
+/*Library section end----------------------------------------*/
 
 
 
@@ -4045,6 +3979,8 @@ ul {
     display: block;
     width: 100%;
     float: left; /* Keeps it consistent with your older layout logic */
+    position: relative;
+    z-index: 10;
 }
 
 .footer-content {

