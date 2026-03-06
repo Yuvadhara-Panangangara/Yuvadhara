@@ -539,34 +539,6 @@ button {
     
 }
 
-/*.games_taital {
-    width: 100%;
-    float: left;
-    font-size: 40px;
-    color: #fefefd;
-    text-align: center;
-    font-weight: 500;
-    font-weight: bold;
-}
-
-.games_text {
-    width: 100%;
-    float: left;
-    font-size: 16px;
-    color: #fefefd;
-    text-align: center;
-    margin: 0px;
-}
-
-.games_section_2 {
-    width: 100%;
-    float: left;
-    padding: 40px 0px 0px 0px;
-}
-*/
-
-/* Zoom In #1 */
-
 .hover01 figure img {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -653,93 +625,6 @@ figure:hover+span {
 
 /* games section end */
 
-
-/* blog section start 
-
-
-.blog_section {
-    width: 100%;
-    float: left;
-}
-
-.blog_title {
-    width: 100%;
-    float: left;
-    font-size: 40px;
-    color: #393938;
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 20px;
-}
-
-.blog_section_2 {
-    width: 100%;
-    float: left;
-}
-
-.blog_section_2 {
-    width: 100%;
-    float: left;
-    background-image: url(../images/event-img.png);
-    height: auto;
-    background-size: 100%;
-    padding: 0px 0px 0px 0px;
-}
-
-.blog_img{
-    width: 100%;
-    float: left;
-    background-image: url(../images/blog-img.png);
-    background-size: 100%;
-    background-repeat: no-repeat;
-}
-
-.video_bt {
-    width: 100%;
-    padding: 170px 0px;
-}
-
-.play_icon img {
-    width: 80px;
-}
-
-.play_icon {
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
-    z-index: 5;
-    text-align: center;
-}
-
-.play_icon::before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 90px;
-    width: 90px;
-    height: 90px;
-    transform: translate(-50%, -50%);
-    background-color: rgb(255, 255, 255, 0.7);
-    border-radius: 100%;
-    animation: fadeEffect 1.3s infinite ease;
-    box-shadow: 0px 0px 10px 0px;
-    right: 0px;
-    margin: 0 auto;
-    z-index: -1;
-}
-
-@keyframes fadeEffect {
-    0% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 0;
-    }
-}
-
-    blog section end */
 
 /* client section start */
 
@@ -952,175 +837,6 @@ figure:hover+span {
 }
 
 
-/* contact section end */
-
-
-/* footer section start 
-
-.footer_section {
-    width: 100%;
-    float: left;
-    background-color: #262626;
-    height: auto;
-    padding: 90px 0px 40px 0px;
-}
-
-.footer_logo {
-    width: 100%;
-    float: left;
-    padding-bottom: 15px;
-}
-
-.useful_text {
-    width: 100%;
-    font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 15px;
-    font-weight: bold;
-    margin-top: 10px;
-    font-family: 'Poppins', sans-serif;    
-}
-
-.footer_text {
-    width: 100%;
-    float: left;
-    font-size: 14px;
-    color: #ffffff;
-    margin: 0px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.footer_menu {
-    width: 100%;
-    float: left;
-}
-
-.footer_menu ul {
-    margin: 0px;
-    padding: 0px;
-}
-
-.footer_menu li {
-    font-size: 14px;
-    color: #ffffff;
-    font-family: 'Poppins', sans-serif;
-}
-
-.footer_menu li a {
-    color: #ffffff;
-}
-
-.footer_menu li a:hover {
-    color: #6cbd15;
-}
-
-.dummy_text {
-    width: 30%;
-    float: left;
-    font-size: 14px;
-    color: #ffffff;
-    margin: 0px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.location_text {
-    width: 100%;
-    float: left;
-}
-
-.location_text ul {
-    margin: 0px;
-    padding: 0px;
-}
-
-.location_text li {
-    font-size: 14px;
-    color: #ffffff;
-    padding: 0px 0px 5px 0px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.location_text li a {
-    color: #ffffff;
-}
-
-.location_text li a:hover {
-    color: #6cbd15;
-}
-
-.padding_left_10 {
-    padding-left: 10px;
-}
-
-.social_icon {
-    width: 100%;
-    display: inline-block;
-    text-align: center;
-    margin-top: 40px;
-}
-.social_icon ul {
-    margin: 0px;
-    padding: 0px;
-    display: inline-block;
-}
-
-.social_icon li {
-    float: left;
-}
-
-.social_icon li a {
-    float: left;
-    padding: 5px 15px;
-    background-color: #ffffff;
-    color: #000;
-    border-radius: 100%;
-    font-size: 22px;
-    margin-right: 5px;
-    width: 50px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-.social_icon li a:hover {
-    background-color: #6cbd15;
-    color: #ffffff;
-}
-
-/* footer section end */
-
-
-/* copyright section start 
-
-.copyright_section {
-    width: 100%;
-    float: left;
-    background-color: #252525;
-    height: auto;
-}
-
-.copyright_text {
-    width: 100%;
-    float: left;
-    font-size: 16px;
-    color: #ffffff;
-    text-align: center;
-    margin-left: 0px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.copyright_text a {
-    color: #ffffff;
-}
-
-.copyright_text a:hover {
-    color: #6cbd15;
-}
-
-
-/* copyright section end */   
-
-
-
 .margin_top90 {
     margin-top: 90px;
 }
@@ -1302,9 +1018,10 @@ input::placeholder {
 
 /*test-timeline from codepen end----------------------------------------------------*/
 
-/*test-blog post card start---------------------------------------------------------*/
 
+/* Blog page full start--------------------------------------------------------------------------------*/
 
+/*Blog page card start-------------------------------------------------*/
 
 /*PEN STYLES*/
 * {
@@ -1507,8 +1224,86 @@ input::placeholder {
     
 
 }
-/*test-blog post card end-------------------------------------------------------------*/
 
+/*blog page card end----------------------------------------------*/
+
+
+/*Read more section in blog post start----------------------------------------*/
+/* Container for the text you want to truncate */
+.expandable-text {
+  max-height: 100px; /* Adjust this value to show more or less text */
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.3s ease-out; /* Smooth expansion animation */
+}
+
+
+/* Fading effect at the bottom of the truncated text */
+.fade-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.667), rgba(255, 255, 255, 0));
+}
+
+/* Style for the 'Read more' button */
+.read-more-btn {
+  display: block;
+  margin-top: 10px;
+  color: #0dfd31; /* Blue color for a clickable link */
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: right;
+}
+
+/* Class added by JavaScript to expand the text */
+.blog-card.expanded .expandable-text {
+  max-height: 5000px; /* Large value to ensure it expands fully */
+}
+
+/* Hide the fade effect when the text is expanded */
+.blog-card.expanded .fade-overlay {
+  display: none;
+}
+
+/*Read more section in blog post end----------------------------------------*/
+
+/*Blog page share button start-------------------------------------*/
+/* Container to hold the share button and read more link */
+.share-and-readmore-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* Style for the share button icon */
+.share-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #eb4d4d; /* A neutral color for the icon */
+  font-size: 1.2rem;
+  padding: 5px;
+  transition: color 0.2s;
+}
+
+.share-btn:hover {
+  color: #00ff08; /* Color on hover */
+}
+
+/* The read-more-btn style remains the same but its parent now uses flexbox */
+.read-more-btn {
+  color: #007bff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/*Blog page share button end----------------------------------------------*/
+
+/*Blog page full end-----------------------------------------------------------------------------------*/
 
 /*test-contact page start-------------------------------------------------------------*/
 
@@ -1728,6 +1523,13 @@ body {
 
 .section-main-title {
   font-weight: 800;
+  text-transform: uppercase;
+  color: #001d3d; /* Navy */
+  letter-spacing: 1px;
+}
+
+.section-sub-main-title {
+  font-weight: 500;
   text-transform: uppercase;
   color: #001d3d; /* Navy */
   letter-spacing: 1px;
@@ -3178,84 +2980,60 @@ body {
         height: 190px;
     }
 }
+
+/* test library tabs section start*/
+/* --- Library Tabs Styling --- */
+.tab-container-main { padding: 40px 0 20px 0; background: #f8f9fa; border-bottom: 1px solid #ddd; }
+.tab-note { font-size: 14px; color: #666; margin-bottom: 15px; font-style: italic; }
+
+.custom-library-tabs .nav-link {
+    background: #fff;
+    color: #555;
+    border: 1px solid #ddd;
+    margin: 0 10px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.custom-library-tabs .nav-link.active {
+    background: #6cbd15 !important; /* Green for Active */
+    color: white !important;
+    border-color: #6cbd15;
+    box-shadow: 0 4px 10px rgba(108, 189, 21, 0.3);
+}
+
+/* --- Theme Colors --- */
+.paperback-bg { background: linear-gradient(90deg, #6cbd15 0%, #5ea413 100%) !important; }
+.ebook-bg { background: linear-gradient(90deg, #17a2b8 0%, #117a8b 100%) !important; }
+.ebook-bookshelf-bg { background: #f0f7f8; }
+
+/* --- Search & Grid Layout --- */
+.bookshelf-list {
+    display: flex; flex-wrap: wrap; justify-content: center;
+    gap: 80px 40px; list-style: none; padding: 50px 20px 100px 20px;
+}
+
+.book { width: 150px; height: auto; position: relative; margin-bottom: 40px; }
+.book img { 
+    width: 150px; height: 220px; object-fit: cover; border-radius: 0 5px 5px 0;
+    transition: 0.4s ease; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); 
+}
+.book:hover img { transform: translateX(-10px); box-shadow: 8px 5px 20px rgba(0,0,0,0.3); }
+
+/* Link styling for E-books */
+.book a { text-decoration: none !important; color: inherit; display: block; }
+
+.book-info { padding-top: 15px; text-align: center; }
+.book-info h4 { font-size: 14px; font-weight: bold; margin: 0; }
+.book-info p { font-size: 12px; color: #777; margin: 5px 0 0 0; }
+/* test library tabs section end*/
+
 /*Library section end----------------------------------------*/
 
 
 
-/*Read more section in blog post start----------------------------------------*/
-/* Container for the text you want to truncate */
-.expandable-text {
-  max-height: 100px; /* Adjust this value to show more or less text */
-  overflow: hidden;
-  position: relative;
-  transition: max-height 0.3s ease-out; /* Smooth expansion animation */
-}
-
-
-/* Fading effect at the bottom of the truncated text */
-.fade-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(to top, rgba(255, 255, 255, 0.667), rgba(255, 255, 255, 0));
-}
-
-/* Style for the 'Read more' button */
-.read-more-btn {
-  display: block;
-  margin-top: 10px;
-  color: #0dfd31; /* Blue color for a clickable link */
-  cursor: pointer;
-  text-decoration: underline;
-  text-align: right;
-}
-
-/* Class added by JavaScript to expand the text */
-.blog-card.expanded .expandable-text {
-  max-height: 5000px; /* Large value to ensure it expands fully */
-}
-
-/* Hide the fade effect when the text is expanded */
-.blog-card.expanded .fade-overlay {
-  display: none;
-}
-
-/*Read more section in blog post end----------------------------------------*/
-
-/*Read more section share button start----------------------------------------*/
-/* Container to hold the share button and read more link */
-.share-and-readmore-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 10px;
-}
-
-/* Style for the share button icon */
-.share-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #eb4d4d; /* A neutral color for the icon */
-  font-size: 1.2rem;
-  padding: 5px;
-  transition: color 0.2s;
-}
-
-.share-btn:hover {
-  color: #00ff08; /* Color on hover */
-}
-
-/* The read-more-btn style remains the same but its parent now uses flexbox */
-.read-more-btn {
-  color: #007bff;
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-/*Read more section share button end------------------------------------------------------*/
 
 /*All Projects start----------------------------------------------------------------*/
 .img-project{

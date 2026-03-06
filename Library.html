@@ -134,111 +134,174 @@
 
        <!-- Main heading and search bar section end ------------------->
       
-<div class="banner-book-main">
-          <div class="banner-book-content">
-              <div class="text-section">
-                  <h1>YUVADHARA MINI LIBRARY</h1>
-                  <p class="description text-white">
-                      Search here using Name of the Book or Author <br>
-                      പുസ്തകത്തിന്റെയോ രചയിതാവിന്റെയോ പേര് ഉപയോഗിച്ച് ഇവിടെ തിരയുക.
-                  </p>
-                  <div class="search-container">
-                      <input type="text" id="search-input" class="search-input" placeholder="Search for books...">
-                      <button type="button" class="search-button">
-                          <i class="fa fa-search"></i>
-                      </button>
-                  </div>
-              </div>
-              <div class="book-mockup">
-                  <img src="images/Library/book library cover.png" alt="Book Cover" class="book-cover">
-              </div>
-          </div>
-      </div>
-      <div class="bookshelf">
-          <ul id="bookshelf-list">
-              
-              <li class="book">
-                  <img src="images/Library/cover 2.jpg" alt="Premalekhanam">
-                  <div class="book-info">
-                      <h4>Premalekhanam പ്രേമലേഖനം</h4>
-                      <p>Basheer ബഷീർ</p>
-                  </div>
-              </li>
+<div class="tab-container-main">
+        <div class="container text-center">
+            <p class="tab-note"><i class="fa fa-info-circle"></i> Choose a category below to explore our physical collection or read digital books online.</p>
+            
+            <ul class="nav nav-pills custom-library-tabs justify-content-center" id="libraryTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="paperback-tab" data-toggle="pill" href="#paperback" role="tab">
+                        <i class="fa fa-book"></i> Paperback Library
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="ebook-tab" data-toggle="pill" href="#ebook" role="tab">
+                        <i class="fa fa-laptop"></i> E-Book Library
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-              <li class="book">
-                  <img src="images/Library/cover 3.jpg" alt="Chillukal Pookkumbol">
-                  <div class="book-info">
-                      <h4>Chillukal Pookkumbol ചില്ലകൾ പൂക്കുമ്പോൾ</h4>
-                      <p>Santhosh Narayanan</p>
-                  </div>
-              </li>
+    <div class="tab-content" id="libraryTabContent">
+        
+        <div class="tab-pane fade show active" id="paperback" role="tabpanel">
+            <div class="banner-book-main paperback-bg">
+                <div class="banner-book-content">
+                    <div class="text-section">
+                        <h1>PAPERBACK COLLECTION</h1>
+                        <p class="description">Physical books available at the Club Library.</p>
+                        <div class="search-container">
+                            <input type="text" class="search-input lib-search" data-target="paper-list" placeholder="Search physical books...">
+                            <button class="search-button"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="book-mockup"><img src="images/Library/book library cover.png" alt="Paperback"></div>
+                </div>
+            </div>
+            <div class="bookshelf">
+                <ul id="paper-list" class="bookshelf-list">
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="https://d.gr-assets.com/books/1348927776l/8032112.jpg" alt="The big short">
-                  <div class="book-info">
-                      <h4>The big short</h4>
-                      <p>Michael lewis</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="http://ecx.images-amazon.com/images/I/51oXKWrcYYL.jpg" alt="Book Title">
-                  <div class="book-info">
-                      <h4>Book Title</h4>
-                      <p>Author Name</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="images/Library/cover 2.jpg" alt="Premalekhanam">
-                  <div class="book-info">
-                      <h4>Premalekhanam പ്രേമലേഖനം</h4>
-                      <p>Basheer ബഷീർ</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="images/Library/cover 3.jpg" alt="Chillukal Pookkumbol">
-                  <div class="book-info">
-                      <h4>Chillukal Pookkumbol ചില്ലകൾ പൂക്കുമ്പോൾ</h4>
-                      <p>Santhosh Narayanan</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="https://d.gr-assets.com/books/1348927776l/8032112.jpg" alt="The big short">
-                  <div class="book-info">
-                      <h4>The big short</h4>
-                      <p>Michael lewis</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="images/Library/cover 2.jpg" alt="Premalekhanam">
-                  <div class="book-info">
-                      <h4>Premalekhanam പ്രേമലേഖനം</h4>
-                      <p>Basheer ബഷീർ</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="images/Library/cover 3.jpg" alt="Chillukal Pookkumbol">
-                  <div class="book-info">
-                      <h4>Chillukal Pookkumbol ചില്ലകൾ പൂക്കുമ്പോൾ</h4>
-                      <p>Santhosh Narayanan</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              <li class="book">
-                  <img src="https://d.gr-assets.com/books/1348927776l/8032112.jpg" alt="The big short">
-                  <div class="book-info">
-                      <h4>The big short</h4>
-                      <p>Michael lewis</p>
-                  </div>
-              </li>
+                    <li class="book">
+                        <img src="images/Library/cover 2.jpg" alt="Book">
+                        <div class="book-info"><h4>Premalekhanam</h4><p>Basheer</p></div>
+                    </li>
 
-              </ul>
-      </div>
+                    </ul>
+            </div>
+        </div>
+
+        <div class="tab-pane fade" id="ebook" role="tabpanel">
+            <div class="banner-book-main ebook-bg">
+                <div class="banner-book-content">
+                    <div class="text-section">
+                        <h1 style="color: #fff;">DIGITAL E-LIBRARY</h1>
+                        <p class="description">Click on a book to read it online from external sources.</p>
+                        <div class="search-container">
+                            <input type="text" class="search-input lib-search" data-target="ebook-list" placeholder="Search digital books...">
+                            <button class="search-button"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="book-mockup"><img src="images/Library/book library cover.png" alt="Digital"></div>
+                </div>
+            </div>
+            <div class="bookshelf ebook-bookshelf-bg">
+                <ul id="ebook-list" class="bookshelf-list">
+                    <li class="book">
+                        <a href="https://drive.google.com/file/d/1uPAYx1R8VW9zkE0qP6y3QA2FS6lQXkWU/view?usp=drive_link" target="_blank">
+                            <img src="images/ebook images/Aadujeevitham -by Benyamin_0000.jpg" alt="Aadujeevitham">
+                            <div class="book-info"><h4>Aadujeevitham ആടുജീവിതം</h4><p>Benyamin ബെന്യാമിൻ</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+
+                    <li class="book">
+                        <a href="https://www.gutenberg.org/ebooks/74" target="_blank">
+                            <img src="https://www.gutenberg.org/cache/epub/74/pg74.cover.medium.jpg" alt="Tom Sawyer">
+                            <div class="book-info"><h4>The Adventures of Tom Sawyer</h4><p>External Source: Gutenberg</p></div>
+                        </a>
+                    </li>
+                    </ul>
+            </div>
+        </div>
+    </div>
 
       <!-- Library section book list end -->
 
