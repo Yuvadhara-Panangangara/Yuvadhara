@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/index.html</loc>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/about.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/blog.html</loc>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Memberships.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/tournaments.html</loc>
+    <priority>0.70</priority>
+  </url>
+  <url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/our-team.html</loc>
+    <priority>0.60</priority>
+  </url>
+	<url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/project-y-blood.html</loc>
+    <priority>0.60</priority>
+  </url>
+</url>
+	<url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/vision-2031.html</loc>
+    <priority>0.60</priority>
+  </url>
+</url>
+	<url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/project-floodlight.html</loc>
+    <priority>0.60</priority>
+  </url>
+</url>
+	<url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Library.html</loc>
+    <priority>0.60</priority>
+  </url>
+</url>
+	<url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Panangangara%20Super%20League.html</loc>
+    <priority>0.60</priority>
+  </url>
+</url>
+	<url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Panangangara%20Cricket%20League.html</loc>
+    <priority>0.60</priority>
+  </url>
+</url>
+	<url>
+    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Panangangara%20Badminton%20League.html</loc>
+    <priority>0.60</priority>
+  </url>
+</urlset>
