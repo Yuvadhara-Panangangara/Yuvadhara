@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://yuvadhara-panangangara.github.io/Yuvadhara/sitemap.xml
