@@ -1680,14 +1680,23 @@ body {
 .football_banner_title_span2 {
     width: 100%;
     font-size: 50px;
-    color: #ff6606;
+    color: #ff0606;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 2px 4px 4px rgba(251, 253, 249, 0.6);
     font-family: "Oswald", Sans-serif;
 }
-.footballer-section{
-  margin-top: 5vh;
+.image-box.border-danger img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px inset #d80e0e;
+    padding: 5px;
+    object-fit: cover;
+}
+.footballer-section {
+    margin-top: 5vh;
+    background-color: #2f0a0a; /* Matching your tournament background */
 }
 .row{
   
@@ -1707,7 +1716,7 @@ body {
   border-radius: 10px;
   border-style: inset;
   border-width: 2px;
-  border-color: #0ed826;
+  border-color: #d80e0e;
   padding: 5px;
 
 }
@@ -1725,37 +1734,8 @@ body {
   color: #ffffff;
  
 }
-.banner-cricket {
-    width: 100%;
-    height: 20em;
-    position: relative;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-image: url(../images/cricket-team-cropped.jpeg);
-    /* THE FIX: Flexbox centering */
-    display: flex;
-    align-items: center;     /* Vertical Center */
-    justify-content: center;  /* Horizontal Center */
-}
-.cricket_banner_title_span1 {
-    width: 100%;
-    font-size: 50px;
-    color: #ffffff;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 2px 4px 4px rgba(110, 210, 10, 0.6);
-    font-family: "Oswald", Sans-serif;
-}
-.cricket_banner_title_span2 {
-    width: 100%;
-    font-size: 50px;
-    color: #0ed826;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.929);
-    font-family: "Oswald", Sans-serif;
-}
+
+
 /*our-team football section end-------------------------------------------------------*/
 
 
@@ -1786,9 +1766,26 @@ body {
 
 .cricketer-section {
     margin-top: 5vh;
-    background-color: #1c1c1c; /* Matching your tournament background */
+    background-color: #0a2f0c; /* Matching your tournament background */
 }
-
+.cricket_banner_title_span1 {
+    width: 100%;
+    font-size: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(110, 210, 10, 0.6);
+    font-family: "Oswald", Sans-serif;
+}
+.cricket_banner_title_span2 {
+    width: 100%;
+    font-size: 50px;
+    color: #0ed826;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.929);
+    font-family: "Oswald", Sans-serif;
+}
 /* Reusing your player card styles for consistency */
 .player-card {
     text-align: center;
@@ -1833,7 +1830,7 @@ body {
 .banner-badminton {
     width: 100%;
     height: 20em;
-    background-image: url('../images/badminton-banner.jpg'); /* Ensure this image exists */
+    background-image: url('../images/banner-badminton2.jpg'); /* Ensure this image exists */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1844,7 +1841,7 @@ body {
 
 .badminton_banner_title_span1 {
     font-size: 50px;
-    color: #ffcc00;
+    color: #f8f8f8;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 2px 4px 4px rgba(75, 89, 97, 0.6);
@@ -1853,7 +1850,7 @@ body {
 
 .badminton_banner_title_span2 {
     font-size: 50px;
-    color: #ffcc00; /* Cyan color for Badminton */
+    color: #ffcd06; /* Cyan color for Badminton */
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.5);
@@ -1861,7 +1858,7 @@ body {
 }
 
 .badminton-player-section {
-    background-color: #1c1c1c;
+    background-color: #2f2e0a;
     padding-bottom: 50px;
 }
 
@@ -1899,7 +1896,7 @@ body {
 .banner-volleyball {
     width: 100%;
     height: 20em;
-    background-image: url('../images/volleyball-banner.jpg'); /* Add your image here */
+    background-image: url('../images/banner-volleyball.jpg'); /* Add your image here */
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -1910,7 +1907,7 @@ body {
 
 .volleyball_banner_title_span1 {
     font-size: 50px;
-    color: #ff8901;
+    color: #f5f5f5;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.5);
@@ -1927,7 +1924,7 @@ body {
 }
 
 .volleyball-player-section {
-    background-color: #1c1c1c;
+    background-color: #2f180a;
     padding-bottom: 50px;
 }
 
@@ -1956,6 +1953,203 @@ body {
     }
 }
 /*our-team volleyball section end-------------------------------------------------------*/
+
+/*our-team Chess section start---------------------------------------------------------*/
+
+/* --- Chess Specific Styles --- */
+
+.banner-chess {
+    width: 100%;
+    height: 20em;
+    background-image: url('../images/Chess\ banner.jpg'); /* Ensure this image exists */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chess_banner_title_span1 {
+    font-size: 50px;
+    color: #ffffff; /* Light Sky Blue */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+    font-family: "Oswald", Sans-serif;
+}
+
+.chess_banner_title_span2 {
+    font-size: 50px;
+    color: #007bff; /* Royal Blue */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.2);
+    font-family: "Oswald", Sans-serif;
+}
+
+.chess-player-section {
+    background-color: #0a192f; /* Deep Dark Blue background */
+    padding-bottom: 50px;
+}
+
+/* Specific Border for Chess Players */
+.blue-border img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px inset #00d4ff; /* Blue Border */
+    padding: 5px;
+    object-fit: cover;
+}
+
+/* Role text color */
+.chess-player-section .player-card .p-role {
+    color: #00d4ff; 
+}
+
+/* Responsive fix for the chess section */
+@media (max-width: 767px) {
+    .chess_banner_title_span1, 
+    .chess_banner_title_span2 {
+        font-size: 30px;
+    }
+    .banner-chess {
+        height: 12em;
+    }
+}
+
+/*our-team Chess section end---------------------------------------------------------*/
+
+/*our-team Swimming section start---------------------------------------------------------*/
+/* --- Swimming Specific Styles --- */
+
+.banner-swimming {
+    width: 100%;
+    height: 20em;
+    background-image: url('../images/Swimming\ banner.jpg'); /* Replace with your swimming image */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swimming_banner_title_span1 {
+    font-size: 50px;
+    color: #E0FFFF; /* Light Cyan */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+    font-family: "Oswald", Sans-serif;
+}
+
+.swimming_banner_title_span2 {
+    font-size: 50px;
+    color: #00FFFF; /* Vibrant Cyan */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 8px rgba(0, 255, 255, 0.4);
+    font-family: "Oswald", Sans-serif;
+}
+
+.swimming-player-section {
+    background-color: #001220; /* Deep Ocean Background */
+    padding-bottom: 50px;
+}
+
+/* Specific Cyan Border for Swimmers */
+.cyan-border img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px inset #00FFFF; /* Cyan Border */
+    padding: 5px;
+    object-fit: cover;
+}
+
+/* Matching Cyan text color for roles */
+.swimming-player-section .player-card .p-role {
+    color: #00FFFF; 
+}
+
+/* Responsive fix for the swimming section */
+@media (max-width: 767px) {
+    .swimming_banner_title_span1, 
+    .swimming_banner_title_span2 {
+        font-size: 30px;
+    }
+    .banner-swimming {
+        height: 12em;
+    }
+}
+/*our-team Swimming section end---------------------------------------------------------*/
+
+/*our-team Athletics section start---------------------------------------------------------*/
+/* --- Athletics Specific Styles --- */
+
+.banner-athletics {
+    width: 100%;
+    height: 20em;
+    background-image: url('../images/Athletics\ banner.jpg'); /* Ensure this image exists */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.athletics_banner_title_span1 {
+    font-size: 50px;
+    color: #ffffff; /* Sky Blue */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(0, 0, 0, 0.6);
+    font-family: "Oswald", Sans-serif;
+}
+
+.athletics_banner_title_span2 {
+    font-size: 50px;
+    color: #00BFFF; /* Deep Sky Blue */
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.3);
+    font-family: "Oswald", Sans-serif;
+}
+
+.athletics-player-section {
+    background-color: #0a242f; /* Dark background */
+    padding-bottom: 50px;
+}
+
+/* Specific Border for Athletics Players */
+.skyblue-border img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 10px;
+    border: 2px inset #87CEEB; /* Sky Blue Border */
+    padding: 5px;
+    object-fit: cover;
+}
+
+/* Role text color for Athletics */
+.athletics-player-section .player-card .p-role {
+    color: #87CEEB; 
+}
+
+/* Responsive fix for the athletics section */
+@media (max-width: 767px) {
+    .athletics_banner_title_span1, 
+    .athletics_banner_title_span2 {
+        font-size: 30px;
+    }
+    .banner-athletics {
+        height: 12em;
+    }
+}
+/*our-team Athletics section end---------------------------------------------------------*/
 
 /*test our-team page end-------------------------------------------------------------------------------*/
 
@@ -2265,7 +2459,7 @@ body {
 
 .football_banner_title_span_member1 {
     width: 100%;
-    /* font-size: 50px;*/
+   
     color: #2e2c2c;
     font-weight: bold;
     text-transform: uppercase;
@@ -2273,7 +2467,7 @@ body {
 }
 .football_banner_title_span_member2 {
     width: 100%;
-   /* font-size: 50px;*/
+   
     color: #0cb9c2;
     font-weight: bold;
     text-transform: uppercase;
@@ -2299,7 +2493,7 @@ body {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
-
+/*
 .position-footballer{
   text-align: center;
   color: #ffffff;
@@ -2333,9 +2527,9 @@ body {
     text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.6);
     font-family: "Oswald", Sans-serif;
 }
-
+*/
 /*test-membership-banner end-------------------------------------------------------------*/
-
+/*
 .banner-volleyball{
   width: 100%;
   height: 20em;
@@ -2364,7 +2558,7 @@ body {
     text-shadow: 2px 4px 4px rgba(255, 255, 255, 0.6);
     font-family: "Oswald", Sans-serif;
 }
-
+*/
 /*  previous match result section start----------------------------------------*/
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
