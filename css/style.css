@@ -1,3 +1,11 @@
+/* Debugging Tool: Highlights the element that is too wide */
+/*
+
+* {
+    outline: 1px solid red !important;
+}
+    
+*/
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 
@@ -287,19 +295,21 @@ button {
 }
 
 
-/* header section end */
+/* header section end ----------------------------------------------*/
 
+
+/* banner section start -------------------------------------------*/
 
 /* banner section start */
-
 .banner_section {
     width: 100%;
     float: left;
     background-image: url(../images/banner-bg.png);
     height: auto;
-    background-size: 100%;
+    background-size: cover; /* Changed from 100% to cover to prevent gaps */
     background-repeat: no-repeat;
-    padding: 150px 0px;
+    background-position: center;
+    padding: 60px 0px; /* Reduced padding for mobile */
     z-index: 1;
     position: relative;
 }
@@ -307,89 +317,95 @@ button {
 .banner_section::after {
     content: '';
     position: absolute;
-    width: 100%; /* Change to 100% or use a media query */
-    max-width: 750px; /* Keep the original size for desktop */
+    width: 100%;
+    max-width: 750px;
     height: 100%;
     left: 0px;
-    right: initial;
-    background-color: rgb( 10, 10, 9, 0.8);
-    background-size: 100%;
+    background-color: rgba(10, 10, 9, 0.8);
     top: 0px;
     z-index: -1;
-    clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+    /* We disable the clip-path on mobile because it cuts off text */
+    clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
 }
 
 .banner_taital {
-    width: 50%;
-    font-size: 70px;
+    width: 100%; /* Full width on mobile */
+    font-size: 32px; /* Smaller font for small screens */
     color: #ffffff;
     font-weight: bold;
-    line-height: 80px;
+    line-height: 40px; /* Adjusted line height */
+    margin-bottom: 20px;
 }
 
 .banner_text {
-    width: 75%;
-    font-size: 16px;
+    width: 100%; /* Full width on mobile */
+    font-size: 15px;
     color: #ffffff;
-    margin: 0px;
+    margin-bottom: 30px;
 }
 
 .btn_main {
     width: 100%;
     display: flex;
+    flex-wrap: wrap; /* Critical: allows buttons to stack on tiny screens */
 }
 
 .started_bt {
-    width: 180px;
-    margin-right: 20px;
-    margin-top: 50px;
+    width: 160px; /* Slightly smaller for mobile */
+    margin-right: 10px;
+    margin-top: 15px;
 }
 
 .started_bt a {
-    width: 100%;
-    float: left;
-    padding: 10px 10px;
+    display: block;
+    padding: 10px;
     color: #fefefd;
     background-color: #6cbd15;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     text-transform: uppercase;
 }
 
-.started_bt a:hover {
-    color: #0b0c0b;
-    background-color: #fefefd;
-}
-
-.started_bt.active a {
-    color: #0b0c0b;
-    background-color: #fefefd;
-}
-
-.carousel-indicators .active {
-    background-color: transparent;
-    border: 3px solid #6cbd15;
-}
-
-.carousel-indicators li {
-    width: 20px;
-    height: 20px;
-    background-color: transparent;
-    border: 3px solid #ffffff;
-    border-radius: 100px;
-}
-
+/* Indicators fix: -110px is too far and pushes page height */
 .carousel-indicators {
-    right: inherit;
-    bottom: -110px;
     left: 0;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: -50px; /* Bring it closer */
+    width: 100%;
     justify-content: center;
-    padding-left: 0;
-    margin-right: 15%;
-    margin-left: 0%;
 }
 
-/* banner section end */
+/* --- TABLET & DESKTOP ADJUSTMENTS --- */
+@media (min-width: 768px) {
+    .banner_section {
+        padding: 150px 0px;
+    }
+    .banner_taital {
+        width: 60%;
+        font-size: 60px;
+        line-height: 70px;
+    }
+    .banner_text {
+        width: 75%;
+        font-size: 18px;
+    }
+    .started_bt {
+        width: 180px;
+        margin-top: 50px;
+    }
+}
+
+/* --- LARGE SCREEN FIX --- */
+@media (min-width: 1200px) {
+    .banner_taital {
+        font-size: 70px;
+        line-height: 80px;
+    }
+}
+
+/* banner section end ---------------------------------------------------------------------*/
 
 /* who we are (in about page) section start -------------------------------------------------------*/
 /* --- About Us: Who We Are (Light Background) --- */
@@ -2298,73 +2314,65 @@ body {
 .ad-image {
     width: 100% !important;
     height: 100% !important;
-    /* Change 'cover' to 'contain' to see the full image */
     object-fit: contain; 
-    
-    /* Add a background color to fill the empty space around the image */
     background-color: #f8f9fa; 
-    
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: 2px solid #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ddd; /* Thinner border for cleaner look */
     display: block;
 }
 
-
 /* --- Section 1: Tournament Sponsors --- */
 .ad-section .column-block {
-    height: 400px; /* Base height for the whole column */
+    height: 350px; /* Reduced base height */
 }
 
-/* For columns with two stacked images */
 .ad-section .row-block-inner {
-    height: calc(50% - 5px); /* Half height minus margin */
+    height: calc(50% - 5px);
     width: 100%;
     margin-bottom: 10px;
 }
 
-/* For columns with one single tall image */
-.ad-section .column-block > .ad-image {
-    height: 100% !important;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
 /* --- Section 2: Shootout Sponsors --- */
 .ad-section2 .column1-block {
-    height: 500px;
+    height: 400px;
 }
 
 .ad-section2 .column2-block {
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* The top wide banner in Section 2 */
 .ad-section2 .column2-block > .row-block-inner:first-child {
-    height: 240px; 
+    height: 180px; /* Adjusted height */
 }
 
-/* The bottom row with 3 small images in Section 2 */
+/* The row with 3 small images - THE TROUBLE ZONE */
 .ad-section2 .column2-block > .row-block-inner:last-child {
-    height: 250px;
+    height: 210px;
     display: flex;
     gap: 10px;
+    width: 100%; /* Ensure it stays in bounds */
 }
 
 .col-row-block-inner {
     flex: 1;
     height: 100%;
+    min-width: 0; /* CRITICAL: Allows flex items to shrink below their content size */
 }
 
-/* Responsive: Adjust heights for mobile so they don't look too stretched */
+/* Responsive Overrides for iPhone SE / Pixel 7 */
 @media (max-width: 767px) {
-    .ad-section .column-block { height: 250px; }
-    .ad-section2 .column1-block { height: 300px; }
+    .ad-section .column-block { height: 200px; }
+    .ad-section2 .column1-block { height: 250px; margin-bottom: 15px; }
     .ad-section2 .column2-block { height: auto; }
-    .ad-section2 .column2-block > .row-block-inner:last-child { height: 150px; }
+    .ad-section2 .column2-block > .row-block-inner:first-child { height: 150px; }
+    .ad-section2 .column2-block > .row-block-inner:last-child { 
+        height: 100px; /* Shrink height on mobile to keep ratio */
+        gap: 5px; 
+    }
 }
 /*test-ad block page in Home page end-------------------------------------------------------------*/
 
@@ -2987,7 +2995,7 @@ body {
 /*Upcoming match section start----------------------------------------*/
 .upcoming-match-section {
             
-            background-image: url(../images/coolbackgrounds-particles-stellar.png);
+            background-color: #003366;
             border-radius: 1rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             padding: 2rem;
@@ -3377,114 +3385,270 @@ body {
 
 /*Panangangarotsavam posters section start----------------------------------------------*/
 
-/* Ensure the grid fills the section and doesn't shift left */
-#speed .container-xl {
-    width: 100%;
+/* Panangangarotsavam Grid Styling */
+
+#speed {
+    background-color: #fcfcfc;
+    overflow: hidden;
 }
 
 .competition-card {
-    background: #111;
-    border-radius: 8px;
+    background: #ffffff;
+    border-radius: 12px;
     overflow: hidden;
     height: 100%;
     display: flex;
     flex-direction: column;
+    /* Soft shadow for a modern look */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #eee;
 }
 
-/* FIX: This forces every image to be the exact same height/ratio */
+/* Lift effect on hover */
+.competition-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
 .competition-img-wrapper {
     width: 100%;
-    aspect-ratio: 4 / 5; /* Matches most sports posters */
+    aspect-ratio: 4 / 5;
     overflow: hidden;
-    background: #000;
+    background: #f1f1f1;
 }
 
 .competition-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Shows full poster without cropping */
+    object-fit: cover; /* Use cover for a more 'poster' feel */
+    transition: transform 0.5s ease;
 }
 
-/* FIX: Locked height prevents the "jumping" of the next section */
+.competition-card:hover .competition-img-wrapper img {
+    transform: scale(1.08); /* Slight zoom on image hover */
+}
+
 .competition-name-box {
-    background-color: #212529;
-    padding: 12px 8px;
+    background-color: #ffffff;
+    padding: 15px 10px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 80px; /* Lock height here */
-    height: 80px;
+    min-height: 70px;
+    border-top: 1px solid #f0f0f0;
 }
 
 .competition-name-box h6 {
-    color: #ef4444; /* red */
+    color: #333; /* Darker text looks more modern on white bg */
     font-size: 13px;
     font-weight: 700;
     margin: 0;
-    line-height: 1.2;
+    line-height: 1.3;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
-/* Fix for mobile text size */
+/* Mobile Adjustments for iPhone SE / Pixel 7 */
 @media (max-width: 767px) {
     .competition-name-box {
-        min-height: 90px;
-        height: 90px;
+        min-height: 60px;
+        padding: 10px 5px;
     }
     .competition-name-box h6 {
-        font-size: 11px;
+        font-size: 10px;
+        color: #ef4444; /* Keep the brand red on mobile for pop */
+    }
+    #speed h2 {
+        font-size: 1.6rem;
     }
 }
+
 /*Panangangarotsavam posters section end----------------------------------------------*/
+
+
+/*Penalty shooutout HOME PAGE start----------------------------------------------*/
+
+/* Penalty Shootout Section Fix */
+#penalty-section {
+    overflow: hidden;
+    width: 100%;
+}
+
+.penalty-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+.penalty-title a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Specific Mobile Adjustments */
+@media (max-width: 767px) {
+    .penalty-title {
+        font-size: 1.5rem; /* Shrink title so it doesn't cause zoom */
+    }
+    
+    .perform_3_left {
+        text-align: center; /* Center text on mobile for better aesthetics */
+    }
+    
+    .perform_3_left h5 {
+        margin-top: 20px;
+    }
+}
+
+/* Ensure the image doesn't have hidden width */
+.perform_3_right img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+/*Penalty shooutout HOME PAGE end----------------------------------------------*/
 
 
 /*MAJOR PROJECTS SECTION HOME PAGE start----------------------------------------------*/
 
-/* Container to maintain a consistent aspect ratio (e.g., 16:9 or 4:3) */
-    .image-container {
-        width: 100%;
-        padding-top: 66.66%; /* This creates a 3:2 aspect ratio */
-        position: relative;
-        overflow: hidden;
-        background-color: #f8f9fa; /* Light grey placeholder for loading */
-    }
+/* --- MAJOR PROJECTS SECTION: RESPONSIVE FIX --- */
 
-    /* Force the image to fill the container without distortion */
-    .image-container img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: contain; /* This is the magic property that crops to fit */
-        object-position: center;
-        transition: transform 0.3s ease;
-    }
+/* 1. Prevent the section from leaking width */
+#perform {
+    overflow-x: hidden;
+    width: 100%;
+}
 
-    /* Optional: Hover effect */
-    .perform_2_left:hover img {
-        transform: scale(1.05);
-    }
+/* 2. Responsive Typography (The "Zoom" Prevention) */
+.perform_1 h2 {
+    font-size: 1.5rem; /* Default for mobile */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
 
-    /* Ensure column cards have equal height for a clean row */
-    .perform_2 .col {
-        display: flex;
+@media (min-width: 768px) {
+    .perform_1 h2 {
+        font-size: 2.5rem; /* Larger for desktop */
+    }
+}
+
+/* 3. Handle the 'col-6' text overflow on small phones */
+.perform_2_left h4, 
+.perform_2_left p,
+.perform_2_left span {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.perform_2_left h4 a {
+    font-size: 1.1rem; /* Scale down titles on mobile */
+}
+
+/* 4. Fix the Title Row Border for Mobile */
+@media (max-width: 767px) {
+    .perform_1_left {
+        text-align: center !important; /* Center title on mobile */
+        border-right: none !important; /* FIXED: Use border-right instead of border-end */
+        border-bottom: 2px solid #ef4444; /* Add a bottom line instead */
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    .perform_1_right {
+        text-align: center !important;
+    }
+}
+
+/* 5. Image Container Fix */
+.image-container {
+    width: 100%;
+    padding-top: 66.66%; 
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Changed to cover to ensure no white gaps */
+}
+
+/* 6. Card Flex Fix */
+.perform_2 .col-6 {
+    display: flex;
+}
+
+.perform_2_left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #fff;
+    /* Ensure padding doesn't add to width */
+    box-sizing: border-box; 
+}
+
+/*MAJOR PROJECTS SECTION HOME PAGE end----------------------------------------------*/
+
+/*history made SECTION HOME PAGE start----------------------------------------------*/
+
+/* History Made Section Fixes */
+#about_pg {
+    overflow: hidden; /* Safety net to stop any child element from leaking out */
+    width: 100%;
+}
+
+.history_title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.malayalam_text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    word-break: keep-all; /* Keeps Malayalam words intact while wrapping naturally */
+}
+
+.about_pg1r h4 {
+    font-size: 1.25rem;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* Specific Mobile Fixes (iPhone SE / Pixel 7) */
+@media (max-width: 576px) {
+    .history_title {
+        font-size: 1.8rem;
     }
     
-    .perform_2_left {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        background: #fff;
+    .malayalam_text {
+        font-size: 1rem;
+        padding: 0 10px;
     }
 
-    /* Push the 'Read More' link to the bottom if text lengths vary */
-    .perform_2_left h5 {
-        margin-top: auto;
-        padding-top: 1rem;
+    .about_pg1r h4 {
+        font-size: 1.1rem;
+        flex-wrap: wrap; /* Allows trophy icon and text to stack if needed */
     }
 
-    /*MAJOR PROJECTS SECTION HOME PAGE end----------------------------------------------*/
+    .about_pg1r p {
+        font-size: 0.95rem;
+        text-align: justify;
+    }
+}
+
+/*history made SECTION HOME PAGE end----------------------------------------------*/
 
  /*Project Floodlight section home page start----------------------------------------------*/
     /* Hero Section */
@@ -3629,10 +3793,13 @@ body {
 /* --- STATIC PARTNER GRID STYLES --- */
 .partners-grid {
     padding: 20px 0;
+    /* Prevent any row overflow */
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .partner-wrapper {
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Increased for better mobile spacing */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -3640,36 +3807,49 @@ body {
 
 .partner-card {
     background: #fff;
-    padding: 15px;
+    padding: 10px; /* Reduced slightly for mobile room */
     border-radius: 8px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 120px; /* Ensures all boxes are even */
+    height: 100px; /* Slightly shorter for a cleaner look */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .partner-card img {
-    max-height: 80px;
+    max-height: 70px; /* Adjusted to fit better */
+    max-width: 100%;  /* CRITICAL: Prevents image from pushing width */
     width: auto;
-    filter: grayscale(100%); /* Start as Grayscale */
+    height: auto;
+    object-fit: contain;
+    filter: grayscale(100%);
     opacity: 0.7;
     transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
 /* --- HOVER EFFECTS --- */
 .partner-card:hover {
-    transform: scale(1.1); /* Zoom In Effect */
+    transform: translateY(-5px); /* Lift up looks cleaner than scale zoom */
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    z-index: 10;
 }
 
 .partner-card:hover img {
-    filter: grayscale(0%); /* Turns colorful */
+    filter: grayscale(0%);
     opacity: 1;
 }
 
+/* Responsive Scaling for small phones (iPhone SE) */
+@media (max-width: 380px) {
+    .partner-card {
+        height: 80px;
+        padding: 5px;
+    }
+    .partner-card img {
+        max-height: 50px;
+    }
+}
 /*Our partners section end-----------------------------------------------------------*/
 
 /*Our Members in Memebership page start-----------------------------------------------------------*/
@@ -4181,3 +4361,145 @@ body {
 }
 
 /*Footer section new end--------------------------------------------------------------------------------*/
+
+/* Safety nets section start -----------------------------------------------------*/
+
+/* --- Project Safety Nets: Global Theme --- */
+:root {
+    --bg-dark: #1a1a1a;
+    --bg-silver: #2b2b2b;
+    --text-main: #dcdcdc;
+    --text-dim: #a0a0a0;
+    --accent-silver: #c0c0c0;
+    --yuvadhara-green: #6cbd15;
+    --danger-red: #ef4444;
+}
+
+body.project-safety-page {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    overflow-x: hidden; /* Prevents the horizontal scroll/zoom issue */
+}
+
+/* --- Hero Section --- */
+.hero_section {
+    padding: 100px 0;
+    background: radial-gradient(circle at center, #3a3a3a 0%, #1a1a1a 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero_section h1 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    color: var(--accent-silver);
+}
+
+/* --- Content Sections --- */
+.layout_padding {
+    padding: 60px 0;
+}
+
+h2, h3 {
+    color: var(--accent-silver);
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+}
+
+.section-title-border {
+    border-bottom: 2px solid #444;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* --- Problem & Objective Lists --- */
+.list-unstyled li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fa-check-circle { color: var(--yuvadhara-green); }
+.fa-times-circle { color: var(--danger-red); }
+
+/* --- Impact Cards --- */
+.impact-card {
+    background: var(--bg-silver);
+    padding: 30px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.impact-card:hover {
+    transform: translateY(-10px);
+    border: 1px solid var(--yuvadhara-green);
+}
+
+.impact-card i {
+    color: var(--yuvadhara-green);
+    margin-bottom: 20px;
+}
+
+/* --- Status & Funding Info --- */
+.status-box {
+    background: #1f1f1f;
+    border-left: 4px solid #ffc107; /* Warning yellow for "submitted" status */
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 30px;
+}
+
+/* --- Image Styling --- */
+.shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.5) !important;
+    transition: filter 0.3s ease;
+}
+
+.shadow-lg:hover {
+    filter: brightness(1.1);
+}
+
+/* --- Responsive Fixes (Anti-Zoom) --- */
+@media (max-width: 768px) {
+    .hero_section h1 {
+        font-size: 1.8rem;
+    }
+    
+    .layout_padding {
+        padding: 40px 15px;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    /* Stack images and text properly */
+    .flex-md-row-reverse {
+        flex-direction: column-reverse !important;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Custom button specifically for this page */
+.btn-safety {
+    background-color: var(--yuvadhara-green);
+    border: none;
+    padding: 12px 30px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.btn-safety:hover {
+    background-color: white;
+    color: var(--bg-dark);
+}
+
+/* Safety nets section end -----------------------------------------------------*/
+
