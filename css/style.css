@@ -1174,208 +1174,163 @@ input::placeholder {
 
 /* Blog page full start--------------------------------------------------------------------------------*/
 
-/*Blog page card start-------------------------------------------------*/
-
-/*PEN STYLES*/
+/* Global Reset */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-/* Fix for the Zoom/Overflow Issue */
+.blog_section {
+    overflow-x: hidden; /* Safety net against horizontal scroll */
+}
+
+.heading-blog-page {
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: #373737;
+    margin-bottom: 40px;
+}
+
+/* Card Container */
 .blog-card {
     display: flex;
     flex-direction: column;
-    margin: 10px 0; /* Changed from auto */
     box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
-    width: 100%; /* Ensure it fills the col-6 */
-    height: 100%; /* Ensures cards in the same row are equal height */
+    width: 100%;
+    height: 100%; /* Ensures all cards in a row are equal height */
+    transition: all 0.3s ease;
 }
-.blog-card a {
-  color: inherit;
-}
-.blog-card a:hover {
-  color: #3b70fc;
-}
+
 .blog-card:hover .photo {
-  transform: scale(1.3) rotate(3deg);
+    transform: scale(1.1) rotate(2deg);
 }
+
+/* Media/Photo Section */
 .blog-card .meta {
-  position: relative;
-  z-index: 0;
-  height: 200px;
+    position: relative;
+    z-index: 0;
+    height: 220px;
+    overflow: hidden;
 }
+
 .blog-card .photo {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-size: contain;
-  background-repeat: no-repeat;  /* custom added by shan*/
-  background-position: center;
-  transition: transform 0.2s;
-}
-.blog-card .details,
-.blog-card .details ul {
-  margin: auto;
-  padding: 0;
-  list-style: none;
-}
-.blog-card .details {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -100%;
-  margin: auto;
-  transition: left 0.2s;
-  background: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  padding: 10px;
-  width: 100%;
-  font-size: 0.9rem;
-}
-.blog-card .details a {
-  -webkit-text-decoration: dotted underline;
-          text-decoration: dotted underline;
-}
-.blog-card .details ul li {
-  display: inline-block;
-}
-.blog-card .details .author:before {
-  font-family: FontAwesome;
-  margin-right: 10px;
-  content: "";
-}
-.blog-card .details .date:before {
-  font-family: FontAwesome;
-  margin-right: 10px;
-  content: "";
-}
-.blog-card .details .tags ul:before {
-  font-family: FontAwesome;
-  content: "";
-  margin-right: 10px;
-}
-.blog-card .details .tags li {
-  margin-right: 2px;
-}
-.blog-card .details .tags li:first-child {
-  margin-left: -4px;
-}
-.blog-card .description {
-  padding: 1rem;
-  background: #fff;
-  position: relative;
-  z-index: 1;
-}
-.blog-card .description h1,
-.blog-card .description h2 {
-  font-family: Poppins, sans-serif;
-}
-.blog-card .description h1 {
-  line-height: 1.2;
-  margin: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-.blog-card .description h2 {
-  font-size: 1rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: #160202;
-  margin-top: 5px;
-}
-.blog-card .description .read-more {
-  text-align: right;
-}
-.blog-card .description .read-more a {
-  color: #3b70fc;
-  display: inline-block;
-  position: relative;
-}
-.blog-card .description .read-more a:after {
-  content: "";
-  font-family: FontAwesome;
-  margin-left: -10px;
-  opacity: 0;
-  vertical-align: middle;
-  transition: margin 0.3s, opacity 0.3s;
-}
-.blog-card .description .read-more a:hover:after {
-  margin-left: 5px;
-  opacity: 1;
-}
-.blog-card p {
-  position: relative;
-  margin: 1rem 0 0;
-}
-.blog-card p:first-of-type {
-  margin-top: 1.25rem;
-}
-.blog-card p:first-of-type:before {
-  content: "";
-  position: absolute;
-  height: 5px;
-  background: #3b70fc;
-  width: 35px;
-  top: -0.75rem;
-  border-radius: 3px;
-}
-.blog-card:hover .details {
-  left: 0%;
-}
-@media (min-width: 640px) {
-  .blog-card {
-    flex-direction: row;
-    
-  }
-  .blog-card .meta {
-    flex-basis: 40%;
-    height: auto;
-  }
-  .blog-card .description {
-    flex-basis: 60%;
-  }
-  .blog-card .description:before {
-    transform: skewX(-3deg);
-    content: "";
-    background: #fff;
-    width: 30px;
     position: absolute;
-    left: -10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover; /* Better than 'contain' for card layouts */
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+
+/* Details Overlay */
+.blog-card .details {
+    position: absolute;
     top: 0;
     bottom: 0;
-    z-index: -1;
-  }
-  .blog-card.alt {
-    flex-direction: row-reverse;
-  }
-  .blog-card.alt .description:before {
-    left: inherit;
-    right: -10px;
-    transform: skew(3deg);
-  }
-  .blog-card.alt .details {
-    padding-left: 25px;
-  }
-}
-
-.row1-blog , .row2-blog{
+    left: -100%;
+    margin: 0;
+    padding: 20px;
+    list-style: none;
+    transition: left 0.3s;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
     width: 100%;
-    display: flex;
-    align-items: center;
 }
 
-.heading-blog-page{
-    text-align: center;
-    font-style: bold;
-    font-size: 30px;
-    color: #373737;
-    
+.blog-card:hover .details {
+    left: 0;
+}
 
+.blog-card .details li {
+    padding: 5px 0;
+}
+
+/* Description Section */
+.blog-card .description {
+    padding: 1.5rem;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Ensures text area fills the card */
+}
+
+.blog-card .description h1 {
+    line-height: 1.2;
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+/* IMPORTANT: Link and Text Wrapping */
+.blog-card .description p, 
+.blog-card .description a {
+    margin-top: 1rem;
+    word-wrap: break-word; /* Fixes long URL overflow */
+    overflow-wrap: anywhere; 
+    word-break: break-word;
+}
+
+.blog-card .description p:first-of-type:before {
+    content: "";
+    position: absolute;
+    height: 5px;
+    background: #3b70fc;
+    width: 35px;
+    top: -10px;
+    border-radius: 3px;
+}
+
+/* Share and Read More controls */
+.share-and-readmore-container {
+    margin-top: auto; /* Pushes buttons to the bottom of the card */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.read-more-btn {
+    color: #3b70fc;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Desktop Skew Effect */
+@media (min-width: 640px) {
+    .blog-card {
+        flex-direction: row;
+        min-height: 300px;
+    }
+
+    .blog-card .meta {
+        flex-basis: 40%;
+        height: auto;
+    }
+
+    .blog-card .description {
+        flex-basis: 60%;
+    }
+
+    /* Skew Decor */
+    .blog-card .description:before {
+        transform: skewX(-3deg);
+        content: "";
+        background: #fff;
+        width: 30px;
+        position: absolute;
+        left: -15px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+    }
 }
 
 /*blog page card end----------------------------------------------*/
@@ -2321,6 +2276,9 @@ body {
     border: 1px solid #ddd; /* Thinner border for cleaner look */
     display: block;
 }
+.ad-section{
+    background-color: #ffffff;
+}
 
 /* --- Section 1: Tournament Sponsors --- */
 .ad-section .column-block {
@@ -2343,6 +2301,23 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.ad-section2 h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Optional: Small accent line under the centered heading */
+.ad-section2 h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #ef4444; /* Match your red accent */
+    margin: 8px auto 0;
+    border-radius: 2px;
 }
 
 .ad-section2 .column2-block > .row-block-inner:first-child {
@@ -2705,317 +2680,385 @@ body {
 }
 */
 /*  previous match result section start----------------------------------------*/
-
+/* Previous match result section start */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 *,
 *:after,
 *:before {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 :root {
-	--color-text-primary: #1c2a38;
-	--color-text-secondary: #8A8F98;
-	--color-text-alert: #d72641;
-	--color-text-icon: #dbdade;
-	--color-bg-primary: #fff;
-	--color-bg-secondary: #f3f5f9;
-	--color-bg-alert: #fdeaec;
-	--color-theme-primary: #623ce6;
-}
-
-button,
-input,
-select,
-textarea {
-	font: inherit;
-}
-
-img {
-	display: block;
-}
-
-strong {
-	font-weight: 600;
+    --color-text-primary: #1c2a38;
+    --color-text-secondary: #8A8F98;
+    --color-text-alert: #d72641;
+    --color-text-icon: #dbdade;
+    --color-bg-primary: #fff;
+    --color-bg-secondary: #f3f5f9;
+    --color-bg-alert: #fdeaec;
+    --color-theme-primary: #623ce6;
 }
 
 body {
-	
-  font-family: "rajdhani", sans-serif;
-	line-height: 1.5;
-	color: var(--color-text-primary);
-	background-color: var(--color-bg-secondary);
+    font-family: "rajdhani", sans-serif;
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-secondary);
+    margin: 0;
 }
 
-.container-previous-results{
-  display: flex;
-  flex-wrap: wrap;
-	flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box !important;
-  padding-bottom: 2vh;
-  background-color: #1c1c1c;
-  
-
+.container-previous-results {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    padding: 0 20px 8vh 20px; /* Increased bottom padding for buttons */
+    background-color: #f3f4f9;
 }
 
+.previous-results-heading h3 {
+    color: white;
+    background-color: #a8aab1;
+    padding: 2rem 0;
+    text-align: center;
+    margin: 0;
+    font-size: 24px;
+}
+
+/* The Match Card */
 .match {
-  margin-top: 5vh;
-  margin-left: 1%;
-  margin-right: 1%;
-	background-color: var(--color-bg-primary);
-	display: flex;
-	flex-direction: column;
-	
-  
-	border-radius: 10px;
-	box-shadow: 0 0 2px 0 rgba(#303030, 0.1), 0 4px 4px 0 rgba(#303030, 0.1);
+    margin: 30px 1%; /* Increased margin to give buttons breathing room */
+    background-color: var(--color-bg-primary);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    /* REMOVED overflow: hidden to prevent button cropping */
+    width: 100%; 
+    position: relative;
+}
+
+/* Desktop Fix: 3 Cards Side-by-Side */
+@media (min-width: 992px) {
+    .match {
+        width: 31%;
+    }
 }
 
 .match-header {
-	display: flex;
-	border-bottom: 2px solid rgba(#303030, 0.1);
-	padding: 16px;
+    display: flex;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 8px 16px; /* Reduced from 16px to 8px */
+    align-items: center;
+    height: 50px; /* Force a consistent, slim header height */
+}
+
+.match-tournament img {
+    width: 16px; /* Reduced from 20px */
+    height: auto;
+    margin-right: 8px;
 }
 
 .match-status {
-	background-color: var(--color-bg-alert);
-	color: var(--color-text-alert);
-	padding: 8px 12px;
-	border-radius: 6px;
-	font-weight: 600;
-	font-size: 14px;
-	display: flex;
-	align-items: center;
-	line-height: 1;
-	margin-right: auto;
-	&:before {
-		content: "";
-		display: block;
-		width: 6px;
-		height: 6px;
-		background-color: currentColor;
-		border-radius: 50%;
-		margin-right: 8px;
-	}
+    background-color: var(--color-bg-alert);
+    color: var(--color-text-alert);
+    padding: 4px 10px; /* Reduced padding */
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 12px; /* Slightly smaller text */
+    display: flex;
+    align-items: center;
+    margin-right: auto;
 }
 
-.match-tournament {
-	display: flex;
-	align-items: center;
-	font-weight: 600;
-	img {
-		width: 20px;
-		margin-right: 12px;
-	}
-}
-
-.match-actions {
-	display: flex;
-	margin-left: auto;
-}
-
-.btn-icon {
-	border: 0;
-	background-color: transparent;
-	color: var(--color-text-icon);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.match-status:before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
+    border-radius: 50%;
+    margin-right: 8px;
 }
 
 .match-content {
-	display: flex;
-	position: relative;
+    display: flex;
+    padding: 20px 0 45px 0; /* Reduced top padding from 30px to 20px */
 }
 
-.column {
-	padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 5%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: calc(100% / 3);
-}
-
-.team {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+.match-content .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 33.33%;
+    padding: 0 10px;
 }
 
 .team-logo {
-	width: 100px;
-	height: 100px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 50%;
-	background-color: var(--color-bg-primary);
-	box-shadow: 0 4px 4px 0 rgba(#303030, 0.15),
-		0 0 0 15px var(--color-bg-secondary);
-	img {
-		width: 50px;
-	}
+    width: 90px;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: var(--color-bg-primary);
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1), 0 0 0 12px var(--color-bg-secondary);
+    margin-bottom: 15px;
 }
 
+.team-logo img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+/* FIX 1: Set min-height so long names don't move the logo */
 .team-name {
-	text-align: center;
-	margin-top: 24px;
-	font-size: 20px;
-	font-weight: 600;
-  overflow-wrap: break-word;
+    text-align: center;
+    font-size: 18px; /* Restored font size */
+    font-weight: 600;
+    margin: 10px 0 0 0;
+    min-height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .match-details {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .match-date, .match-referee {
-	font-size: 14px;
-	color: var(--color-text-secondary);
-	strong {
-		color: var(--color-text-primary);
-	}
-  text-align: center;
+    font-size: 14px; /* Restored font size */
+    color: var(--color-text-secondary);
+    text-align: center;
 }
 
 .match-score {
-	margin-top: 12px;
-	display: flex;
-	align-items: center;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
 }
 
 .match-score-number {
-	font-size: 48px;
-	font-weight: 600;
-	line-height: 1;
-	&--leading {
-		color: var(--color-theme-primary);
-	}
+    font-size: 48px; /* Restored big font size */
+    font-weight: 700;
+}
+
+.match-score-number--leading {
+    color: var(--color-theme-primary);
 }
 
 .match-score-divider {
-	font-size: 28px;
-	font-weight: 700;
-	line-height: 1;
-	color: var(--color-text-icon);
-	margin-left: 10px;
-	margin-right: 10px;
+    font-size: 28px;
+    margin: 0 10px;
+    color: var(--color-text-icon);
 }
 
+/* FIX 2: Restored button position and removed cropping */
+.match-bet-place-1, .match-bet-place-2, .match-bet-place-3 {
+    position: absolute;
+    bottom: -20px; /* Pushes it slightly outside the card for that "floating" look */
+    left: 50%;
+    transform: translateX(-50%);
+    border: 0;
+    border-radius: 6px;
+    padding: 12px 48px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.match-bet-place-1, .match-bet-place-2 { background-color: #0dd20d; }
+.match-bet-place-3 { background-color: #ff0000; }
+
+/* Keeping the rest of the styles */
 .match-time-lapsed {
-	color: #DF9443;
-	font-size: 14px;
-	font-weight: 600;
-	margin-top: 8px;
-}
-
-.match-referee {
-	margin-top: 12px;
+    color: #DF9443;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .match-bet-options {
-	display: flex;
-	margin-top: 8px;
-	padding-bottom: 12px;
+    display: flex;
+    margin-top: 10px;
 }
 
 .match-bet-option {
-	margin-left: 4px;
-	margin-right: 4px;
-	border: 1px solid var(--color-text-icon);
-	background-color: #F9f9f9;
-	border-radius: 2px;
-	color: var(--color-text-secondary);
-	font-size: 14px;
-	font-weight: 600;
-	padding: 4px 8px;
-}
-
-.match-bet-place-3 {
-	position: absolute;
-	bottom: -16px;
-	left: 50%;
-	transform: translateX(-50%);
-	border: 0;
-	background-color:red;
-	border-radius: 6px;
-	padding: 10px 48px;
-	color: rgba(#fff, 0.9);
-	font-size: 14px;
-	box-shadow: 0 4px 8px 0 rgba(#303030, 0.25);
-}
-
-.match-bet-place-2 {
-	position: absolute;
-	bottom: -16px;
-	left: 50%;
-	transform: translateX(-50%);
-	border: 0;
-	background-color:rgb(13, 210, 13);
-	border-radius: 6px;
-	padding: 10px 48px;
-	color: rgba(#fff, 0.9);
-	font-size: 14px;
-	box-shadow: 0 4px 8px 0 rgba(#303030, 0.25);
-}
-
-.match-bet-place-1 {
-	position: absolute;
-	bottom: -16px;
-	left: 50%;
-	transform: translateX(-50%);
-	border: 0;
-	background-color:rgb(13, 210, 13);
-	border-radius: 6px;
-	padding: 10px 48px;
-	color: rgba(#fff, 0.9);
-	font-size: 14px;
-	box-shadow: 0 4px 8px 0 rgba(#303030, 0.25);
-}
-.previous-results-heading h3{
-  color: white;
-  background-color: #1c1c1c;
-  padding: 1vw;
-  
-
-}
-.previous-results-heading h3:hover{
-  color: greenyellow;
-  cursor: pointer;
+    margin: 0 4px;
+    border: 1px solid var(--color-text-icon);
+    background-color: #F9f9f9;
+    border-radius: 4px;
+    padding: 4px 8px;
+    font-size: 13px;
 }
 /*previous match result section end----------------------------------------*/
 
 /*Upcoming match section start----------------------------------------*/
-.upcoming-match-section {
-            
-            background-color: #003366;
-            border-radius: 1rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            padding: 2rem;
-            position: relative;
-            background-repeat: no-repeat;
-            background-size: cover;
-          
-            background-position: center;
-        }
+/* ============================================================
+   UPCOMING MATCH - COMPLETE CORRECTED STYLES
+   ============================================================ */
 
-.match-score .colon {
-            color: #EF4444; /* red-500 equivalent */
-            font-weight: bold;
+/* 1. OUTER WRAPPER */
+.upcoming-match-container {
+    background: #f8f9fa; /* Light background to make the glass look visible */
+    width: 100%;
+}
+
+/* 2. THE GLASS CARD */
+.upcoming-match-section {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    margin: 0 auto; /* Ensures card stays centered on laptops */
+    position: relative;
+}
+
+/* 3. THE HEADING (UPCOMING MATCH) */
+.upcoming-title-main {
+    font-size: 0.85rem;
+    font-weight: 800;
+    color: #718096; /* Subtle grey */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+/* 4. TEAM LOGOS */
+.team-logo-wrapper img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    padding: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+/* 5. TEAM NAMES */
+.team-name-responsive {
+    font-weight: 800;
+    color: #1a202c;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    line-height: 1.2;
+}
+
+/* 6. SCORE & CENTER INFO */
+.match-score-glass {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #2563eb; /* Primary Blue */
+    line-height: 1;
+}
+
+.match-score-glass .colon {
+    color: #ef4444; /* Red accent */
+}
+
+.match-meta-slim {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+.glass-subtext {
+    color: #4a5568;
+}
+
+.match-time-highlight {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+/* ============================================================
+   RESPONSIVE OVERRIDES
+   ============================================================ */
+
+/* Laptop / Desktop (Large Screens) */
+@media (min-width: 992px) {
+    .upcoming-title-main {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Adds a small blue underline under the title on desktop */
+    .upcoming-title-main::after {
+        content: "";
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: #2563eb;
+        margin: 5px auto 0;
+        border-radius: 2px;
+    }
+
+    .team-name-responsive {
+        font-size: 1.1rem;
+    }
+
+    .match-score-glass {
+        font-size: 2.8rem;
+    }
+}
+
+/* Tablet (Medium Screens) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .team-name-responsive {
+        font-size: 1rem;
+    }
+}
+
+/* Mobile (Phones) */
+@media (max-width: 767px) {
+    .upcoming-match-section {
+        padding: 0.8rem 0.5rem;
+    }
+
+    .upcoming-title-main {
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+    }
+
+    .team-name-responsive {
+        font-size: 0.65rem; /* Ensures name fits next to logo on mobile */
+        margin-top: 5px;
+    }
+
+    .team-logo-wrapper img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .match-score-glass {
+        font-size: 1.6rem;
+    }
+
+    .glass-subtext, .match-time-highlight {
+        font-size: 0.65rem;
+    }
 }
 /*Upcoming match section end----------------------------------------*/
 
 /*Trophies and awards section start----------------------------------------*/
 .trophies-awards-section {
-    background-color: #2D3748;
-    border-radius: 1rem;
+    background-color: #a8aab1;
+    border-radius: 0rem;
     padding: 3rem 1rem;
     overflow: hidden; /* Ensures no scrollbars during sliding */
 }
@@ -3381,6 +3424,14 @@ body {
   aspect-ratio: 3/2.5;
   border-style: none;
 }
+
+.spec_main{
+    background-color: #f3f4f9;
+}
+
+.section-heading-wrapper{
+    background-color: #a8aab1;
+}
 /*All Projects end-------------------------------------------------------------------*/
 
 /*Panangangarotsavam posters section start----------------------------------------------*/
@@ -3521,6 +3572,7 @@ body {
 #perform {
     overflow-x: hidden;
     width: 100%;
+    background-color: #f3f4f9;
 }
 
 /* 2. Responsive Typography (The "Zoom" Prevention) */
@@ -3603,6 +3655,7 @@ body {
 #about_pg {
     overflow: hidden; /* Safety net to stop any child element from leaking out */
     width: 100%;
+    background-color: white;
 }
 
 .history_title {

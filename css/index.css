@@ -24,13 +24,11 @@ font-size:60px;
 
 /*********************spec****************/
 #spec {
-    background-image: url(../image/8.jpg);
     background-position: center center;
     background-size: cover;
+	background-color: #a8aab1;
 }
-.spec_1_center{
-	border:3px solid  var(--red);
- }
+
 /*********************spec_end****************/
 
 
