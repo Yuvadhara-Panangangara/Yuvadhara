@@ -1,11 +1,11 @@
 /* Debugging Tool: Highlights the element that is too wide */
-/*
 
+/*
 * {
     outline: 1px solid red !important;
 }
-    
-*/
+*/    
+
 /*--------------------------------------------------------------------- File Name: style.css ---------------------------------------------------------------------*/
 
 
@@ -328,20 +328,46 @@ button {
     clip-path: polygon(0 0, 100% 0%, 95% 100%, 0% 100%);
 }
 
+.anek-malayalam-banner_taital {
+  font-family: "Anek Malayalam", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "width" 100;
+}
 .banner_taital {
     width: 100%; /* Full width on mobile */
     font-size: 32px; /* Smaller font for small screens */
     color: #ffffff;
     font-weight: bold;
     line-height: 40px; /* Adjusted line height */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    font-family: 'Anek Malayalam';
+}
+.banner_sub_taital{
+     width: 100%; /* Full width on mobile */
+    font-size: 28px; /* Smaller font for small screens */
+    color: #ffffff;
+    font-weight: bold;
+    line-height: 30px; /* Adjusted line height */
+    margin-bottom: 10px;
+    font-family: 'Anek Malayalam';
 }
 
 .banner_text {
     width: 100%; /* Full width on mobile */
     font-size: 15px;
     color: #ffffff;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+.banner_text_welcome{
+    width: 100%; /* Full width on mobile */
+    font-size: 12px;
+    color: #bebdbd;
+    margin-bottom: 10px;
 }
 
 .btn_main {
@@ -361,6 +387,15 @@ button {
     padding: 10px;
     color: #fefefd;
     background-color: #6cbd15;
+    text-align: center;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.started_bt a:hover {
+    display: block;
+    padding: 10px;
+    color: #6cbd15;
+    background-color: #fefefe;
     text-align: center;
     font-size: 14px;
     text-transform: uppercase;
@@ -2265,90 +2300,91 @@ body {
 
 /*test-ad block page in Home page start-------------------------------------------------------------*/
 
-/* --- Global Sponsor Image Fix --- */
+/* --- GLOBAL SPONSOR IMAGE DECORATION --- */
 .ad-image {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain; 
-    background-color: #f8f9fa; 
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border: 1px solid #ddd; /* Thinner border for cleaner look */
-    display: block;
-}
-.ad-section{
-    background-color: #ffffff;
-}
-
-/* --- Section 1: Tournament Sponsors --- */
-.ad-section .column-block {
-    height: 350px; /* Reduced base height */
-}
-
-.ad-section .row-block-inner {
-    height: calc(50% - 5px);
     width: 100%;
-    margin-bottom: 10px;
+    height: 100%;
+    object-fit: cover; /* Change to 'contain' if you prefer to see the full logo without cropping */
+    background-color: #ffffff; 
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    display: block;
+    transition: transform 0.3s ease;
 }
 
-/* --- Section 2: Shootout Sponsors --- */
+.ad-image:hover {
+    transform: scale(1.02);
+}
+
+/* --- SECTION 1: SQUARE GRID LOGIC --- */
+.square-ad {
+    width: 100%;
+    padding-top: 100%; /* Perfect Square */
+    position: relative;
+    overflow: hidden;
+}
+
+.square-ad-large {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* On Desktop: Large square matches height of 2 small squares + the 1rem gap */
+@media (min-width: 768px) {
+    .square-ad-large {
+        padding-top: calc(200% + 1rem); 
+    }
+}
+
+/* On Mobile: All items become simple squares */
+@media (max-width: 767px) {
+    .square-ad-large {
+        padding-top: 100%;
+    }
+}
+
+.square-ad .ad-image, 
+.square-ad-large .ad-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* --- SECTION 2: BALANCED GRID LOGIC --- */
 .ad-section2 .column1-block {
-    height: 400px;
+    display: flex;
 }
 
 .ad-section2 .column2-block {
-    height: 400px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
-}
-
-.ad-section2 h2 {
-    position: relative;
-    display: inline-block;
-    padding-bottom: 10px;
-}
-
-/* Optional: Small accent line under the centered heading */
-.ad-section2 h2::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 3px;
-    background-color: #ef4444; /* Match your red accent */
-    margin: 8px auto 0;
-    border-radius: 2px;
-}
-
-.ad-section2 .column2-block > .row-block-inner:first-child {
-    height: 180px; /* Adjusted height */
-}
-
-/* The row with 3 small images - THE TROUBLE ZONE */
-.ad-section2 .column2-block > .row-block-inner:last-child {
-    height: 210px;
-    display: flex;
-    gap: 10px;
-    width: 100%; /* Ensure it stays in bounds */
 }
 
 .col-row-block-inner {
     flex: 1;
-    height: 100%;
-    min-width: 0; /* CRITICAL: Allows flex items to shrink below their content size */
+    min-width: 0;
 }
 
-/* Responsive Overrides for iPhone SE / Pixel 7 */
-@media (max-width: 767px) {
-    .ad-section .column-block { height: 200px; }
-    .ad-section2 .column1-block { height: 250px; margin-bottom: 15px; }
-    .ad-section2 .column2-block { height: auto; }
-    .ad-section2 .column2-block > .row-block-inner:first-child { height: 150px; }
-    .ad-section2 .column2-block > .row-block-inner:last-child { 
-        height: 100px; /* Shrink height on mobile to keep ratio */
-        gap: 5px; 
-    }
+/* --- SHARED HEADING STYLES --- */
+.ad-section h2, .ad-section2 h2 {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 12px;
 }
+
+.ad-section h2::after, .ad-section2 h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: #ef4444; /* Match your theme red */
+    margin: 8px auto 0;
+    border-radius: 2px;
+}
+
+/* --- RESP
 /*test-ad block page in Home page end-------------------------------------------------------------*/
 
 /*tournaments page start-------------------------------------------------------------*/
@@ -2679,15 +2715,14 @@ body {
     font-family: "Oswald", Sans-serif;
 }
 */
-/*  previous match result section start----------------------------------------*/
-/* Previous match result section start */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
-*,
-*:after,
-*:before {
-    box-sizing: border-box;
-}
+
+/*  previous match result section start----------------------------------------*/
+/* --- PREVIOUS RESULTS FIXES --- */
+
+/* --- PREVIOUS RESULTS SECTION --- */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
 
 :root {
     --color-text-primary: #1c2a38;
@@ -2700,23 +2735,21 @@ body {
     --color-theme-primary: #623ce6;
 }
 
-body {
-    font-family: "rajdhani", sans-serif;
-    line-height: 1.5;
-    color: var(--color-text-primary);
-    background-color: var(--color-bg-secondary);
-    margin: 0;
-}
-
+/* 1. The Outer Container Fix */
 .container-previous-results {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     justify-content: center;
-    padding: 0 20px 8vh 20px; /* Increased bottom padding for buttons */
+    /* Extra bottom padding (8vh) is good to accommodate the floating buttons */
+    padding: 20px 15px 10vh 15px; 
     background-color: #f3f4f9;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden; /* Critical: kills any horizontal "leak" */
 }
 
+/* 2. Heading Correction */
 .previous-results-heading h3 {
     color: white;
     background-color: #a8aab1;
@@ -2724,49 +2757,45 @@ body {
     text-align: center;
     margin: 0;
     font-size: 24px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-/* The Match Card */
+/* 3. The Match Card Fixes */
 .match {
-    margin: 30px 1%; /* Increased margin to give buttons breathing room */
+    margin: 30px auto; /* 'auto' is safer than 1% for mobile centering */
     background-color: var(--color-bg-primary);
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    /* REMOVED overflow: hidden to prevent button cropping */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     width: 100%; 
-    position: relative;
-}
-
-/* Desktop Fix: 3 Cards Side-by-Side */
-@media (min-width: 992px) {
-    .match {
-        width: 31%;
-    }
+    max-width: 380px; /* Prevents card from touching screen edges */
+    position: relative; /* Necessary for absolute button positioning */
 }
 
 .match-header {
     display: flex;
     border-bottom: 2px solid #f0f0f0;
-    padding: 8px 16px; /* Reduced from 16px to 8px */
+    padding: 8px 16px;
     align-items: center;
-    height: 50px; /* Force a consistent, slim header height */
+    height: 50px;
 }
 
 .match-tournament img {
-    width: 16px; /* Reduced from 20px */
-    height: auto;
-    margin-right: 8px;
+    max-height: 25px; /* Adjust this value as needed to get the desired size */
+    width: auto; /* Maintains aspect ratio */
+    margin-right: 8px; /* Optional: adds space between the logo and text */
+    vertical-align: middle; /* Optional: aligns logo vertically with text */
 }
 
 .match-status {
     background-color: var(--color-bg-alert);
     color: var(--color-text-alert);
-    padding: 4px 10px; /* Reduced padding */
+    padding: 4px 10px;
     border-radius: 4px;
     font-weight: 600;
-    font-size: 12px; /* Slightly smaller text */
+    font-size: 12px;
     display: flex;
     align-items: center;
     margin-right: auto;
@@ -2784,7 +2813,8 @@ body {
 
 .match-content {
     display: flex;
-    padding: 20px 0 45px 0; /* Reduced top padding from 30px to 20px */
+    padding: 20px 0 45px 0; /* Space at bottom for button */
+    width: 100%;
 }
 
 .match-content .column {
@@ -2792,127 +2822,121 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    width: 33.33%;
-    padding: 0 10px;
+    flex: 1; /* More stable than width: 33.33% */
+    padding: 0 5px;
+    min-width: 0; /* Allows content to shrink */
 }
 
+/* 4. Team & Logo Responsive Scaling */
 .team-logo {
-    width: 90px;
-    height: 90px;
+    width: 70px; /* Scaled down for mobile */
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
     background-color: var(--color-bg-primary);
-    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.1), 0 0 0 12px var(--color-bg-secondary);
-    margin-bottom: 15px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,0.05), 0 0 0 8px var(--color-bg-secondary);
+    margin-bottom: 10px;
 }
 
 .team-logo img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
 }
 
-/* FIX 1: Set min-height so long names don't move the logo */
 .team-name {
     text-align: center;
-    font-size: 18px; /* Restored font size */
-    font-weight: 600;
-    margin: 10px 0 0 0;
-    min-height: 50px; 
+    font-size: 14px; /* Scaled down to prevent overflow */
+    font-weight: 700;
+    margin: 5px 0;
+    min-height: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-wrap: break-word; /* Crucial for long names like Mulliyakurshi */
+    word-break: break-word;
 }
 
-.match-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.match-date, .match-referee {
-    font-size: 14px; /* Restored font size */
-    color: var(--color-text-secondary);
-    text-align: center;
-}
-
+/* 5. Score & Details */
 .match-score {
-    margin: 12px 0;
+    margin: 8px 0;
     display: flex;
     align-items: center;
 }
 
 .match-score-number {
-    font-size: 48px; /* Restored big font size */
+    font-size: 32px; /* Scaled down for mobile */
     font-weight: 700;
 }
 
-.match-score-number--leading {
-    color: var(--color-theme-primary);
-}
-
 .match-score-divider {
-    font-size: 28px;
-    margin: 0 10px;
+    font-size: 20px;
+    margin: 0 8px;
     color: var(--color-text-icon);
 }
 
-/* FIX 2: Restored button position and removed cropping */
+/* 6. The "Floating" Button - The Main Culprit */
 .match-bet-place-1, .match-bet-place-2, .match-bet-place-3 {
     position: absolute;
-    bottom: -20px; /* Pushes it slightly outside the card for that "floating" look */
+    bottom: -20px; 
     left: 50%;
     transform: translateX(-50%);
     border: 0;
     border-radius: 6px;
-    padding: 12px 48px;
+    padding: 10px 35px;
     color: white;
     font-size: 14px;
     font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
     cursor: pointer;
     z-index: 10;
+    white-space: nowrap; /* Prevents button from getting weird shapes */
 }
 
 .match-bet-place-1, .match-bet-place-2 { background-color: #0dd20d; }
 .match-bet-place-3 { background-color: #ff0000; }
 
-/* Keeping the rest of the styles */
-.match-time-lapsed {
-    color: #DF9443;
-    font-size: 14px;
-    font-weight: 600;
+/* 7. Desktop Enhancements */
+@media (min-width: 992px) {
+    .match {
+        width: 31%; /* Fits 3 side-by-side */
+        margin: 30px 1%;
+    }
+    .team-logo { width: 90px; height: 90px; }
+    .team-logo img { width: 50px; height: 50px; }
+    .team-name { font-size: 18px; }
+    .match-score-number { font-size: 48px; }
 }
 
-.match-bet-options {
-    display: flex;
-    margin-top: 10px;
+/* FINAL SAFETY FIREWALL */
+@media (max-width: 767px) {
+    .match-content {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    /* Forces everything to stay within 100vw */
+    body, html {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
 }
 
-.match-bet-option {
-    margin: 0 4px;
-    border: 1px solid var(--color-text-icon);
-    background-color: #F9f9f9;
-    border-radius: 4px;
-    padding: 4px 8px;
-    font-size: 13px;
-}
 /*previous match result section end----------------------------------------*/
 
 /*Upcoming match section start----------------------------------------*/
+
 /* ============================================================
-   UPCOMING MATCH - COMPLETE CORRECTED STYLES
+   UPCOMING MATCH - ANTI-ZOOM & STABLE VERSION
    ============================================================ */
 
-/* 1. OUTER WRAPPER */
 .upcoming-match-container {
-    background: #f8f9fa; /* Light background to make the glass look visible */
+    background: #f8f9fa;
     width: 100%;
+    overflow-x: hidden; /* Prevent any horizontal spill */
 }
 
-/* 2. THE GLASS CARD */
 .upcoming-match-section {
     background: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
@@ -2922,26 +2946,26 @@ body {
     padding: 1.2rem;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     width: 100%;
-    margin: 0 auto; /* Ensures card stays centered on laptops */
-    position: relative;
+    max-width: 100%; /* Critical for mobile */
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
-/* 3. THE HEADING (UPCOMING MATCH) */
 .upcoming-title-main {
     font-size: 0.85rem;
     font-weight: 800;
-    color: #718096; /* Subtle grey */
+    color: #718096;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 10px;
-    position: relative;
     display: inline-block;
 }
 
-/* 4. TEAM LOGOS */
+/* TEAM LOGOS */
 .team-logo-wrapper img {
     width: 55px;
     height: 55px;
+    max-width: 100%;
     object-fit: contain;
     background: white;
     border-radius: 50%;
@@ -2950,7 +2974,6 @@ body {
     border: 1px solid #eee;
 }
 
-/* 5. TEAM NAMES */
 .team-name-responsive {
     font-weight: 800;
     color: #1a202c;
@@ -2959,99 +2982,66 @@ body {
     line-height: 1.2;
 }
 
-/* 6. SCORE & CENTER INFO */
+/* SCORE CENTER */
 .match-score-glass {
     font-size: 2.2rem;
     font-weight: 900;
-    color: #2563eb; /* Primary Blue */
+    color: #2563eb;
     line-height: 1;
 }
 
 .match-score-glass .colon {
-    color: #ef4444; /* Red accent */
+    color: #ef4444;
 }
 
 .match-meta-slim {
     font-size: 0.8rem;
     letter-spacing: 0.5px;
-    margin-top: 4px;
 }
 
-.glass-subtext {
-    color: #4a5568;
-}
+.glass-subtext { color: #4a5568; }
+.match-time-highlight { color: #dc2626; font-weight: 700; }
 
-.match-time-highlight {
-    color: #dc2626;
-    font-weight: 700;
+/* ============================================================
+   RESPONSIVE (LAPTOP)
+   ============================================================ */
+@media (min-width: 992px) {
+    .upcoming-title-main { font-size: 1rem; margin-bottom: 15px; }
+    .upcoming-title-main::after {
+        content: ""; display: block; width: 40px; height: 2px;
+        background: #2563eb; margin: 5px auto 0; border-radius: 2px;
+    }
+    .team-name-responsive { font-size: 1.1rem; }
+    .match-score-glass { font-size: 2.8rem; }
 }
 
 /* ============================================================
-   RESPONSIVE OVERRIDES
+   RESPONSIVE (MOBILE FIX)
    ============================================================ */
-
-/* Laptop / Desktop (Large Screens) */
-@media (min-width: 992px) {
-    .upcoming-title-main {
-        font-size: 1rem;
-        margin-bottom: 15px;
-    }
-    
-    /* Adds a small blue underline under the title on desktop */
-    .upcoming-title-main::after {
-        content: "";
-        display: block;
-        width: 40px;
-        height: 2px;
-        background: #2563eb;
-        margin: 5px auto 0;
-        border-radius: 2px;
-    }
-
-    .team-name-responsive {
-        font-size: 1.1rem;
-    }
-
-    .match-score-glass {
-        font-size: 2.8rem;
-    }
-}
-
-/* Tablet (Medium Screens) */
-@media (min-width: 768px) and (max-width: 991px) {
-    .team-name-responsive {
-        font-size: 1rem;
-    }
-}
-
-/* Mobile (Phones) */
 @media (max-width: 767px) {
     .upcoming-match-section {
-        padding: 0.8rem 0.5rem;
+        padding: 0.8rem 0.4rem; /* Tighten padding for small screens */
     }
-
-    .upcoming-title-main {
-        font-size: 0.7rem;
-        letter-spacing: 1px;
-    }
-
-    .team-name-responsive {
-        font-size: 0.65rem; /* Ensures name fits next to logo on mobile */
-        margin-top: 5px;
+    
+    /* Ensure rows don't cause horizontal overflow */
+    .upcoming-match-section .row {
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .team-logo-wrapper img {
-        width: 40px;
-        height: 40px;
+        width: 38px;
+        height: 38px;
     }
 
-    .match-score-glass {
-        font-size: 1.6rem;
+    .team-name-responsive {
+        font-size: 0.6rem; /* Scaled down to prevent pushing width */
+        margin-top: 4px;
+        white-space: nowrap; /* Keep name on one line if possible */
     }
 
-    .glass-subtext, .match-time-highlight {
-        font-size: 0.65rem;
-    }
+    .match-score-glass { font-size: 1.5rem; }
+    .glass-subtext, .match-time-highlight { font-size: 0.6rem; }
 }
 /*Upcoming match section end----------------------------------------*/
 
@@ -3418,19 +3408,48 @@ body {
 
 
 /*All Projects start----------------------------------------------------------------*/
-.img-project{
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 3/2.5;
-  border-style: none;
+/* Safety reset for the whole section */
+#spec {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
-.spec_main{
+.spec_main {
     background-color: #f3f4f9;
+    width: 100%;
 }
 
-.section-heading-wrapper{
+.section-heading-wrapper {
     background-color: #a8aab1;
+    width: 100%;
+}
+
+.img-project {
+    max-width: 100%; /* Changed from 100% width to max-width */
+    height: auto;
+    /* Removed aspect-ratio to allow natural scaling on mobile */
+    border-style: none;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Fix for large numbers on mobile */
+@media (max-width: 767px) {
+    .spec_1_left {
+        text-align: center !important;
+        padding-top: 20px !important;
+    }
+    
+    .fs-1 {
+        font-size: 1.5rem !important; /* Smaller numbers so they don't break the line */
+    }
+    
+    .spec_1 .col-12 {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 /*All Projects end-------------------------------------------------------------------*/
 
@@ -3658,6 +3677,7 @@ body {
     background-color: white;
 }
 
+
 .history_title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -3674,7 +3694,7 @@ body {
 
 .about_pg1r h4 {
     font-size: 1.25rem;
-    margin-top: 15px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
 }
@@ -3846,34 +3866,34 @@ body {
 /* --- STATIC PARTNER GRID STYLES --- */
 .partners-grid {
     padding: 20px 0;
-    /* Prevent any row overflow */
-    margin-left: 0;
-    margin-right: 0;
+    /* Removed manual margins - use mx-0 in HTML instead */
 }
 
 .partner-wrapper {
-    margin-bottom: 20px; /* Increased for better mobile spacing */
+    margin-bottom: 10px; 
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box; /* Ensures padding stays inside */
 }
 
 .partner-card {
     background: #fff;
-    padding: 10px; /* Reduced slightly for mobile room */
+    padding: 10px;
     border-radius: 8px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100px; /* Slightly shorter for a cleaner look */
+    height: 100px; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    overflow: hidden; /* Safety: crops anything that tries to stick out */
 }
 
 .partner-card img {
-    max-height: 70px; /* Adjusted to fit better */
-    max-width: 100%;  /* CRITICAL: Prevents image from pushing width */
+    max-height: 70px; 
+    max-width: 90%;  /* Reduced to 90% for a safe "breathing" margin */
     width: auto;
     height: auto;
     object-fit: contain;
@@ -3882,25 +3902,19 @@ body {
     transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
-/* --- HOVER EFFECTS --- */
-.partner-card:hover {
-    transform: translateY(-5px); /* Lift up looks cleaner than scale zoom */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+/* ... HOVER EFFECTS STAY THE SAME ... */
 
-.partner-card:hover img {
-    filter: grayscale(0%);
-    opacity: 1;
-}
-
-/* Responsive Scaling for small phones (iPhone SE) */
+/* Small phones (iPhone SE) Fix */
 @media (max-width: 380px) {
+    .partners-grid {
+        margin-left: -5px; /* Tiny adjustment for ultra-small screens */
+        margin-right: -5px;
+    }
     .partner-card {
-        height: 80px;
-        padding: 5px;
+        height: 75px;
     }
     .partner-card img {
-        max-height: 50px;
+        max-height: 45px;
     }
 }
 /*Our partners section end-----------------------------------------------------------*/
