@@ -219,7 +219,7 @@ button {
 }
 
 
-/* header section start */
+/* header section start -------------------------------------------------*/
 
 .header_section {
     width: 100%;
@@ -229,21 +229,14 @@ button {
     background-size: 100%;
 }
 
-
 .bg-light {
     background-color: transparent !important;
-}
-
-.mr-auto,
-.mx-auto {
-    margin: 0 auto;
-    text-align: center;
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
     font-size: 18px;
-    padding: 0px 15px 0px 15px;
+    padding: 10px 15px;
 }
 
 .navbar-light .navbar-nav .nav-link:focus,
@@ -251,54 +244,52 @@ button {
     color: #252525;
 }
 
-.navbar-brand {
-    margin: 0;
-    padding: 0;
-}
-
 .navbar-brand img {
     height: 60px;
     width: auto;
 }
 
+/* --- NESTED DROPDOWN LOGIC --- */
 
-.navbar {
-    padding: 0px 15px;
+/* Allow submenus to appear on hover for Desktop */
+@media (min-width: 992px) {
+    .dropdown-submenu {
+        position: relative;
+    }
+
+    .dropdown-submenu .dropdown-menu {
+        top: 0;
+        left: -100%; /* Adjust to -100% to push it to the left so it doesn't go off-screen */
+        margin-top: -1px;
+        display: none;
+    }
+
+    .dropdown-submenu:hover > .dropdown-menu {
+        display: block;
+    }
+    
+    /* Reverse direction for better visibility if needed */
+    .dropdown-menu-right .dropdown-submenu .dropdown-menu {
+        left: auto;
+        right: 100%;
+        margin-right: 0.5rem;
+    }
 }
 
-.login_btn {
-    padding: 0px;
+/* Mobile adjustments */
+@media (max-width: 991px) {
+    .dropdown-submenu .dropdown-menu {
+        position: static;
+        display: block;
+        border: none;
+        background: rgba(0,0,0,0.05);
+        margin-left: 1rem;
+    }
 }
-
-.login_btn ul {
-    margin: 0px;
-    padding: 0px;
-}
-
-.login_btn li {
-    float: left;
-    font-size: 18px;
-    color: #ffffff;
-    padding-left: 20px;
-}
-
-.login_btn li a {
-    color: #ffffff;
-}
-
-.login_btn li a:hover {
-    color: #252525;
-}
-
-.padding_15 {
-    padding-left: 15px;
-}
+/* header section end --------------------------------------------------------*/
 
 
-/* header section end ----------------------------------------------*/
-
-
-/* banner section start -------------------------------------------*/
+/* banner section start -----------------------------------------------------*/
 
 /* banner section start */
 .banner_section {
@@ -2751,8 +2742,8 @@ body {
 
 /* 2. Heading Correction */
 .previous-results-heading h3 {
-    color: white;
-    background-color: #a8aab1;
+    color: rgb(108, 104, 104);
+    background-color: #f6f8fd;
     padding: 2rem 0;
     text-align: center;
     margin: 0;
@@ -3422,7 +3413,7 @@ body {
 }
 
 .section-heading-wrapper {
-    background-color: #a8aab1;
+    background-color: #f6f8fd;
     width: 100%;
 }
 
@@ -3434,7 +3425,9 @@ body {
     display: block;
     margin: 0 auto;
 }
-
+.display-5{
+    color: rgb(108, 104, 104);
+}
 /* Fix for large numbers on mobile */
 @media (max-width: 767px) {
     .spec_1_left {
@@ -3723,7 +3716,7 @@ body {
 
 /*history made SECTION HOME PAGE end----------------------------------------------*/
 
- /*Project Floodlight section home page start----------------------------------------------*/
+/*Project Floodlight section home page start----------------------------------------------*/
     /* Hero Section */
         .hero-section {
             background: linear-gradient(rgba(222, 228, 234, 0.126), rgba(244, 234, 234, 0.527)), 
@@ -3768,7 +3761,7 @@ body {
         }
         
         .footer {
-           background: #95ca53; color: #adb5bd; padding: 50px 0; 
+           background: #d8d8d8; color: #adb5bd; padding: 20px 0; 
         }
         .lead{
           color: #ffffff;
@@ -3866,7 +3859,6 @@ body {
 /* --- STATIC PARTNER GRID STYLES --- */
 .partners-grid {
     padding: 20px 0;
-    /* Removed manual margins - use mx-0 in HTML instead */
 }
 
 .partner-wrapper {
@@ -3874,7 +3866,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box; /* Ensures padding stays inside */
+    box-sizing: border-box;
 }
 
 .partner-card {
@@ -3888,33 +3880,45 @@ body {
     width: 100%;
     height: 100px; 
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    overflow: hidden; /* Safety: crops anything that tries to stick out */
+    border: 1px solid #f0f0f0;
+    overflow: hidden;
 }
 
 .partner-card img {
     max-height: 70px; 
-    max-width: 90%;  /* Reduced to 90% for a safe "breathing" margin */
+    max-width: 90%;
     width: auto;
     height: auto;
     object-fit: contain;
+    /* This makes the image grayscale and faded by default */
     filter: grayscale(100%);
-    opacity: 0.7;
-    transition: filter 0.4s ease, opacity 0.4s ease;
+    opacity: 0.6;
+    transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* ... HOVER EFFECTS STAY THE SAME ... */
+/* --- RESTORED HOVER PROPERTY --- */
+
+/* When the user hovers over the card... */
+.partner-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border-color: #ef4444; /* Optional: adds a slight red border on hover */
+}
+
+/* ...Restore the true colors and full opacity of the image inside */
+.partner-card:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.05); /* Slight zoom for extra polish */
+}
 
 /* Small phones (iPhone SE) Fix */
 @media (max-width: 380px) {
-    .partners-grid {
-        margin-left: -5px; /* Tiny adjustment for ultra-small screens */
-        margin-right: -5px;
-    }
     .partner-card {
-        height: 75px;
+        height: 80px;
     }
     .partner-card img {
-        max-height: 45px;
+        max-height: 50px;
     }
 }
 /*Our partners section end-----------------------------------------------------------*/
@@ -4018,7 +4022,7 @@ body {
 .psl-year { font-size: 0.85rem; color: #999; text-transform: uppercase; font-weight: 600; }
 
 .psl-details-malayalam {
-    font-family: 'Gayathri', sans-serif;
+    font-family: 'Anek Malayalam', sans-serif;
     line-height: 1.8;
     color: #444;
     margin-top: 15px;
@@ -4146,7 +4150,7 @@ body {
 .pcl-year { font-size: 0.8rem; color: #aaa; font-weight: bold; }
 
 .pcl-details-malayalam {
-    font-family: 'Gayathri', sans-serif;
+    font-family: 'Anek Malayalam', sans-serif;
     line-height: 1.7;
     color: #444;
     margin-top: 15px;
@@ -4277,7 +4281,7 @@ body {
 .pbl-year { font-size: 0.8rem; color: #999; font-weight: bold; }
 
 .pbl-details-malayalam {
-    font-family: 'Gayathri', sans-serif;
+    font-family: 'Anek Malayalam', sans-serif;
     line-height: 1.6;
     color: var(--pbl-gray-text);
     margin-top: 15px;
