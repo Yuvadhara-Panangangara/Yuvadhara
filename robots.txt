@@ -1,3 +1,14 @@
+# User-agent: * means this rule applies to all search engines (Google, Bing, etc.)
 User-agent: *
+
+# Allow all content to be crawled
 Allow: /
-Sitemap: https://yuvadhara-panangangara.github.io/Yuvadhara/sitemap.xml
+
+# Exclude specific folders if you have private development files (optional)
+# Disallow: /images/private/
+
+# Hostname of the site
+Host: https://yuvadhara.in
+
+# Link to your brand new sitemap
+Sitemap: https://yuvadhara.in/sitemap.xml
