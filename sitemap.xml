@@ -1,55 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/index.html</loc>
+    <loc>https://yuvadhara.in/</loc>
+    <lastmod>2026-03-22</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/about.html</loc>
+    <loc>https://yuvadhara.in/about.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/blog.html</loc>
+    <loc>https://yuvadhara.in/Memberships.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Memberships.html</loc>
+    <loc>https://yuvadhara.in/blog.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <priority>0.70</priority>
   </url>
   <url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/tournaments.html</loc>
+    <loc>https://yuvadhara.in/our-team.html</loc>
+    <lastmod>2026-03-22</lastmod>
     <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/our-team.html</loc>
-    <priority>0.60</priority>
+    <loc>https://yuvadhara.in/project-y-blood.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.90</priority>
   </url>
-	<url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/project-y-blood.html</loc>
-    <priority>0.60</priority>
+  <url>
+    <loc>https://yuvadhara.in/vision-2031.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.90</priority>
   </url>
-	<url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/vision-2031.html</loc>
-    <priority>0.60</priority>
+  <url>
+    <loc>https://yuvadhara.in/project-floodlight.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.90</priority>
   </url>
-	<url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/project-floodlight.html</loc>
-    <priority>0.60</priority>
+  <url>
+    <loc>https://yuvadhara.in/Project-safety-nets.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.80</priority>
   </url>
-	<url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Library.html</loc>
-    <priority>0.60</priority>
+  <url>
+    <loc>https://yuvadhara.in/Library.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.80</priority>
   </url>
-	<url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Panangangara%20Super%20League.html</loc>
-    <priority>0.60</priority>
+
+  <url>
+    <loc>https://yuvadhara.in/tournaments.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.85</priority>
   </url>
-	<url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Panangangara%20Cricket%20League.html</loc>
-    <priority>0.60</priority>
+  <url>
+    <loc>https://yuvadhara.in/Panangangara%20Super%20League.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.75</priority>
   </url>
-	<url>
-    <loc>https://yuvadhara-panangangara.github.io/Yuvadhara/Panangangara%20Badminton%20League.html</loc>
-    <priority>0.60</priority>
+  <url>
+    <loc>https://yuvadhara.in/Panangangara%20Cricket%20League.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://yuvadhara.in/Panangangara%20Badminton%20League.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <priority>0.75</priority>
   </url>
 </urlset>
