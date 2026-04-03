@@ -127,3 +127,29 @@ $(function () {
     });
 
 }); // End of File
+
+
+/*Added for the submenu items on the menu bar opens only on click and not on hovering
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+$(document).ready(function() {
+    // Target only the submenu toggle links
+    $('.dropdown-submenu a.dropdown-toggle').on("click", function(e) {
+        var $subMenu = $(this).next(".dropdown-menu");
+        var $parentLi = $(this).parent(".dropdown-submenu");
+
+        // Toggle the 'open' class on the clicked submenu
+        $parentLi.toggleClass('open');
+
+        // Prevent other submenus at the same level from staying open (Optional)
+        $parentLi.siblings().removeClass('open');
+
+        // CRITICAL: Prevent the main dropdown from closing when this is clicked
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
+    // Reset submenus when the main dropdown is closed
+    $('.dropdown').on('hidden.bs.dropdown', function () {
+        $(this).find('.dropdown-submenu').removeClass('open');
+    });
+});

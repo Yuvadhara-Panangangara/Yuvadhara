@@ -249,39 +249,42 @@ button {
     width: auto;
 }
 
-/* --- NESTED DROPDOWN LOGIC (Updated Fix) --- */
+/* --- NESTED DROPDOWN LOGIC (Click-to-Open Fix) --- */
 
-/* 1. Hide submenus by default on ALL devices */
+/* 1. Ensure submenus are hidden by default */
 .dropdown-submenu .dropdown-menu {
     display: none;
-    position: relative; /* Better for mobile stacking */
-    left: 0;
+    position: absolute;
+    left: 100%;
+    top: 0;
     margin-top: 0;
-    border: none;
-    box-shadow: none;
-    padding-left: 20px; /* Indent sub-items for clarity */
 }
 
-/* 2. Desktop Hover Logic (Laptops only) */
-@media (min-width: 992px) {
-    .dropdown-submenu {
-        position: relative;
-    }
-    .dropdown-submenu .dropdown-menu {
-        position: absolute;
-        top: 0;
-        left: -100%; /* Keeps it from going off-screen */
-        display: none;
-        padding-left: 0;
-    }
-    .dropdown-submenu:hover > .dropdown-menu {
-        display: block;
-    }
-}
-
-/* 3. Mobile Click Logic: Show when parent has .show class */
-.dropdown-submenu.show > .dropdown-menu {
+/* 2. When the 'open' class is added via Click, show the menu */
+.dropdown-submenu.open > .dropdown-menu {
     display: block !important;
+}
+
+/* 3. Mobile/Tablet Specific Adjustments */
+@media (max-width: 991px) {
+    .dropdown-submenu .dropdown-menu {
+        position: relative;
+        left: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        padding-left: 20px; /* Indents nested items for better visibility */
+        background: rgba(0, 0, 0, 0.05); /* Slight contrast for mobile depth */
+    }
+}
+
+/* 4. Desktop Adjustments: Push submenus to the left if needed */
+@media (min-width: 992px) {
+    .dropdown-menu-right .dropdown-submenu .dropdown-menu {
+        left: auto;
+        right: 100%;
+        margin-right: 0.2rem;
+    }
 }
 /* header section end --------------------------------------------------------*/
 
