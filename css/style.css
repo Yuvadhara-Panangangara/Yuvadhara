@@ -295,7 +295,7 @@ button {
 .banner_section {
     width: 100%;
     float: left;
-    background-image: url(../images/banner-bg.png);
+    background-image: url(../images/Website-Cover-GUPS-1.jpg);
     height: auto;
     background-size: cover; /* Changed from 100% to cover to prevent gaps */
     background-repeat: no-repeat;
