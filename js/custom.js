@@ -153,3 +153,33 @@ $(document).ready(function() {
         $(this).find('.dropdown-submenu').removeClass('open');
     });
 });
+
+
+/*Added for the video play and pause button in image gallery custom videos
+    -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- */
+function toggleVideo(wrapper) {
+    const video = wrapper.querySelector('video');
+    
+    if (video.paused) {
+        // Pause any other playing videos first (optional)
+        document.querySelectorAll('video').forEach(v => {
+            v.pause();
+            v.parentElement.classList.remove('playing');
+        });
+
+        // Play this video
+        video.play();
+        wrapper.classList.add('playing');
+    } else {
+        // Pause this video
+        video.pause();
+        wrapper.classList.remove('playing');
+    }
+}
+
+// Reset the play button when the video ends
+document.querySelectorAll('video').forEach(video => {
+    video.onended = function() {
+        this.parentElement.classList.remove('playing');
+    };
+});

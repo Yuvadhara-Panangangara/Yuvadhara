@@ -1221,7 +1221,7 @@ input::placeholder {
 .blog-card {
     display: flex;
     flex-direction: column;
-    box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 15px -5px rgba(0, 0, 0, 0.388);
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
@@ -3866,7 +3866,7 @@ body {
           .btn-blood:hover { background-color: var(--dark-red); color: white; }
           .text-blood { color: var(--blood-red); }
           .hero_yblood {
-              background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/Y-blood\ about\ page.png);
+              background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(../images/Y-blood-about-page.png);
               background-size: cover; background-position: center; color: white; padding: 80px 0; text-align: center;
           }
           .pdf-container { height: 600px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #eee; }
@@ -4923,3 +4923,184 @@ h2, h3 {
     .qr-box { position: relative; margin: 20px auto 0; transform: none; bottom: 0; right: 0; }
 }
 /* Membership campaign 2026-27 section end ---------------------------------------*/
+
+
+/* Image gallery section start -----------------------------------------------------*/
+
+/* --- Global Dark Theme Settings --- */
+          /* This will ONLY apply to the page where body has the .gallery-dark-theme class */
+            /* This will ONLY apply to the page where body has the .gallery-dark-theme class */
+            body.gallery-dark-theme {
+                background-color: #121212 !important; 
+                color: #ffffff;
+                overflow-x: hidden;
+            }
+
+            /* Ensure the gallery title and other text elements stay white on this specific page */
+            .gallery-dark-theme .gallery_taital {
+                color: #ffffff;
+            }
+
+            /* Updated Play Overlay with your light green color */
+            .gallery-dark-theme .play-overlay {
+                background: rgba(163, 235, 10, 0.8);
+            }
+          /* --- Gallery Section --- */
+          .gallery_section {
+              padding: 60px 0;
+          }
+          
+          .gallery_taital {
+              font-family: 'Rajdhani', sans-serif;
+              font-size: 3rem;
+              font-weight: 800;
+              color: #ffffff;
+              text-align: center;
+              margin-bottom: 60px;
+              text-transform: uppercase;
+              letter-spacing: -1px;
+          }
+
+          /* Added decorative line under title */
+          .gallery_taital::after {
+              content: '';
+              display: block;
+              width: 80px;
+              height: 4px;
+              background-color: #3b70fc; /* Main blue accent */
+              margin: 15px auto 0;
+              border-radius: 2px;
+          }
+
+            /* --- Masonry Grid Responsiveness Update --- */
+            .masonry-grid-container {
+                column-count: 6 !important; /* Default for high-res screens */
+                column-gap: 10px; /* Reduced gap slightly to help fit */
+                width: 100%;
+            }
+
+          .masonry-item {
+              display: inline-block;
+              width: 100%;
+              margin-bottom: 15px; /* Narrow space below items */
+              position: relative;
+              overflow: hidden;
+              border-radius: 8px; /* Smooth corners */
+              transition: transform 0.3s ease;
+              break-inside: avoid; /* Prevents splitting item across columns */
+              background-color: #1a1a1a; /* Placeholder dark color */
+          }
+
+          .masonry-item img,
+          .masonry-item video {
+              width: 100%;
+              height: auto;
+              display: block;
+              border-radius: 8px;
+              aspect-ratio: auto; /* Maintains original aspect ratio */
+          }
+
+          /* Hover Scale Effect */
+          .masonry-item:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+              z-index: 2; /* Ensures overlay sits on top of neighbors */
+          }
+
+          /* --- Title Overlay on Hover --- */
+          .item_title_overlay {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.85) 100%);
+              padding: 15px;
+              transform: translateY(100%); /* Start hidden off-bottom */
+              transition: transform 0.3s ease-in-out, opacity 0.3s ease;
+              opacity: 0;
+              border-radius: 0 0 8px 8px;
+          }
+
+          /* Show Overlay on Hover (Desktop) & Touch (Mobile) */
+          .masonry-item:hover .item_title_overlay,
+          .masonry-item:focus .item_title_overlay {
+              transform: translateY(0);
+              opacity: 1;
+          }
+
+          .item_title_overlay h4 {
+              color: #ffffff;
+              font-size: 1.1rem;
+              font-weight: 700;
+              margin: 0;
+              font-family: 'Poppins', sans-serif;
+          }
+
+          /* Responsive Masonry (Breakpoints matching your site design) */
+          /* Responsive Column Adjustments */
+           /* For standard Laptops and large Tablets */
+            @media (max-width: 1500px) {
+                .masonry-grid-container { column-count: 5; }
+            }
+
+            @media (max-width: 1200px) {
+                .masonry-grid-container { column-count: 4; }
+            }
+
+            @media (max-width: 991px) {
+                .masonry-grid-container { column-count: 3; }
+            }
+
+            @media (max-width: 575px) {
+                /* Mobile View: stays 2 columns */
+                .masonry-grid-container { 
+                    column-count: 2; 
+                    column-gap: 8px;
+                }
+            }
+
+            /* --- Video Wrapper & Custom Play Button --- */
+.video-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+/* The Central Play Button */
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(163, 235, 10, 0.8); /* Your brand blue with transparency */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Allows click to pass through to wrapper */
+}
+
+.play-overlay i {
+    color: white;
+    font-size: 24px;
+    margin-left: 5px; /* Centers the triangle visually */
+}
+
+/* Hide play button when video is playing */
+.video-wrapper.playing .play-overlay {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -50%) scale(1.2);
+}
+
+.masonry-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    background: #000;
+}
+/* Image gallery section end -----------------------------------------------------*/
