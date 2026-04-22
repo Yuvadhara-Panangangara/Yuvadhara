@@ -2889,7 +2889,7 @@ body {
 }
 
 .match-bet-place-1, .match-bet-place-2 { background-color: #0dd20d; }
-.match-bet-place-3 { background-color: #ff0000; }
+.match-bet-place-3 { background-color: #0dd20d; }
 
 /* 7. Desktop Enhancements */
 @media (min-width: 992px) {
