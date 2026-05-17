@@ -1766,7 +1766,82 @@ body {
   .member-role { font-size: 0.75rem; }
   .committee-section { padding: 40px 10px; }
 }
-/*test-Membership page end-------------------------------------------------------------*/
+
+
+/* Extra margin structure to fix visibility transitions */
+.tab-pane {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Membership Committee & Directories Tabs Custom Styling --- */
+.tab-container-main { 
+    padding: 25px 0; 
+    background: #f8f9fa; 
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+}
+.tab-note { 
+    font-size: 14px; 
+    color: #666; 
+    margin-bottom: 15px; 
+    font-style: italic; 
+}
+
+.custom-committee-tabs .nav-link {
+    background: #fff;
+    color: #001d3d; /* Theme Navy */
+    border: 1px solid #ddd;
+    margin: 0 10px;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.custom-committee-tabs .nav-link:hover {
+    color: #ffc107; /* Theme Gold Accent */
+    background: #fcfcfc;
+    border-color: #001d3d;
+}
+
+.custom-committee-tabs .nav-link.active {
+    background: #001d3d !important; /* Solid Navy Accent Background */
+    color: #ffc107 !important; /* Gold Title Fonts */
+    border-color: #001d3d;
+    box-shadow: 0 4px 12px rgba(0, 29, 61, 0.2);
+}
+
+/* Document Container Sizing Override */
+.pdf-container {
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* Viewport Switch Smooth Fade Animation */
+.tab-pane {
+    animation: switchFade 0.45s ease-in-out;
+}
+
+@keyframes switchFade {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    .custom-committee-tabs .nav-link {
+        padding: 10px 16px;
+        font-size: 14px;
+        margin: 5px;
+    }
+}
+/*test-Membership page end---------------------------------------------------------------*/
+
 
 /*test our-team page Start-------------------------------------------------------------*/
 
